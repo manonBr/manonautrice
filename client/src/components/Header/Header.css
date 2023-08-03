@@ -1,0 +1,32 @@
+header {
+    position: fixed;
+    width: 100vw;
+    background-color: var(--colorBackground);
+    z-index: 1;
+}
+.logo {
+    display: block;
+    text-align: center;
+}
+.logo__img {
+    max-height: 50px;
+    margin: 1rem 0;
+}
+
+
+/*
+ * MIN-WIDTH : 768px
+ */
+ @media (min-width: 768px) {
+    header {
+        position: relative;
+    }
+    .logo {
+        margin-top: 1rem;
+        -webkit-transition: 1s;
+                transition: 1s;
+    }
+    .logo__img {
+        max-height: 60px;
+    }
+ }

@@ -1,15 +1,16 @@
 import React from "react"
 import {Routes, Route} from "react-router-dom"
-import Nav from "./components/Header/Nav"
 import Home from "./pages/Home"
 import Projects from "./pages/Projects"
 import Tools from "./pages/Tools"
+import Header from "./components/Header/Header"
+import "./App.css"
 
  
 export default function App() {
  return (
    <div>
-    <Nav></Nav>
+    <Header></Header>
     <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/ressources' element={<Tools/>}/>
