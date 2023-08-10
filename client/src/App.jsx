@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import Projects from "./pages/Projects"
 import Tools from "./pages/Tools"
 import Header from "./components/Header/Header"
+import Footer from "./components/Footer/Footer"
 import "./App.css"
 
  
@@ -17,6 +18,7 @@ export default function App() {
         <Route path='/projets' element={<Projects/>}/>
     </Routes>
     Hello world !
+    <Footer></Footer>
    </div>
  )
 }
