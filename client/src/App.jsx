@@ -5,7 +5,7 @@ import Projects from "./pages/Projects"
 import Tools from "./pages/Tools"
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
-import "./App.css"
+import "./App.scss"
 
  
 export default function App() {

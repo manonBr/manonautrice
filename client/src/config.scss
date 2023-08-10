@@ -1,0 +1,84 @@
+// COLORS
+    // GENERALS
+
+    $black: #000000;
+    $white: #ffffff;
+
+    $grey100: #313131;
+
+    // THEMES (LIGHT & DARK)
+
+    $themes: (
+        colorBackground: (
+            darkTheme: #071312,
+            lightTheme: #ECEAD3,
+        ),
+        colorBase: (
+            darkTheme: #e2dbdb,
+            lightTheme: $grey100,
+        ),
+        colorPrimary: (
+            darkTheme: #923F1E,
+            lightTheme: #CE7D5D,
+        ),
+        colorSecondary: (
+            darkTheme: #008070,
+            lightTheme: #557571,
+        )
+    );
+
+    @mixin styles($mode) {
+        @each $key, $map in $themes {
+            @each $prop, $color in $map {
+                @if $prop == $mode {
+                    --#{$key}: #{$color};
+                }
+            }
+        }
+    }
+
+    .dark-mode {
+        @include styles("darkTheme");
+    }
+    .light-mode {
+        @include styles("lightTheme");
+    }
+
+// FONTS
+$title: 'Josefin Slab', serif;
+$body: 'Mulish', sans-serif;
+
+// BREAKPOINTS
+$xSmall : 480px;
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$xLarge: 1160px;
+
+// MIXINS
+@mixin bouton($background, $color) {
+    $test : rgb(var(--colorPrimary));
+    position: relative;
+    span {
+        background-color: $background;
+        color: $color;
+        &:hover {
+            color: $color;
+        }
+    }
+    &::before {
+        background-color: $background;
+        -webkit-mask-image: url('/dist/assets/img/dots.svg');
+        mask-image: url('/dist/assets/img/dots.svg');
+    }
+}
+
+@mixin columns($column1, $column2:0) {
+    display: grid;
+    @if $column2 == 0 {
+        grid-template-columns: repeat($column1,1fr);
+    } @else {
+        grid-template-columns: #{$column1}fr #{$column2}fr;
+    }
+
+}
