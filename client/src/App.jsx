@@ -17,7 +17,8 @@ export default function App() {
         <Route path='/ressources' element={<Tools/>}/>
         <Route path='/projets' element={<Projects/>}/>
     </Routes>
-    Hello world !
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate nisi nec purus volutpat, ac condimentum purus feugiat. Curabitur porta sem vel fringilla venenatis. Nulla et enim posuere, iaculis massa molestie, rhoncus mauris. Sed iaculis nunc non sapien pretium, pretium cursus tortor pellentesque. Morbi ultricies tortor vel ipsum maximus ultrices. Proin tincidunt ligula ac condimentum commodo. Integer non dui eget diam convallis consectetur et non orci. Vestibulum at lacus eu libero mollis tristique ut et lorem. Vivamus quis massa mattis, eleifend erat efficitur, molestie velit. Nunc eu mauris nec ligula finibus lacinia.</p>
+    <p>Suspendisse tincidunt elit sem, quis ullamcorper eros congue in. Nam finibus ex ut augue dictum interdum. Nullam suscipit vestibulum viverra. Praesent a lacinia orci, et pretium neque. Donec sagittis eleifend ipsum ut interdum. Vestibulum dapibus egestas bibendum. Suspendisse fermentum nisl nec arcu faucibus cursus. Nulla eget velit vitae enim sollicitudin lacinia. Mauris ullamcorper quam enim. Quisque tempus mattis ligula ullamcorper aliquam.</p>
     <Footer></Footer>
    </div>
  )

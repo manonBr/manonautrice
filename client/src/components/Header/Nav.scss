@@ -117,6 +117,7 @@
           }
           a::before {
               content: "•";
+              margin-left: 0.5rem;
           }
           a::after {
               content: '';
