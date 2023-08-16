@@ -9,9 +9,7 @@ import "./Button.features.scss"
  * @param {string} props.children
  * @returns 
  */
-const Button = (props) => {
-    const {link, type} = props
-    const label = props.children
+const Button = ({link, type, children:label}) => {
 
     return (
         <a href={link} className={"btn btn--" + type}>

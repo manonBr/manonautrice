@@ -9,10 +9,7 @@ import "./Columns.layouts.scss"
  * @param {Array} props.children - Columns content, using Column component
  * @returns 
  */
-const Columns = (props) => {
-    const {number, layout} = props
-    const columns = props.children
-
+const Columns = ({number, layout, children:columns}) => {
     let classLayout = ""
 
     switch (layout) {
@@ -43,8 +40,7 @@ const Columns = (props) => {
  * @param {*} props.children - Content of the Column
  * @returns 
  */
-const Column = (props) => {
-    const content = props.children
+const Column = ({children:content}) => {
 
     return(
         <div className="columns__item">
