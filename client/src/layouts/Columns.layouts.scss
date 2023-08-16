@@ -1,0 +1,30 @@
+@import '../config.scss';
+
+.columns {
+    display: grid;
+}
+
+.columns--two {
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1rem;
+}
+
+/*
+ * MIN-WIDTH : 768px
+ */
+@media (min-width:$medium) {
+    .columns--three {
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 3rem;
+    }
+}
+
+/*
+ * MIN-WIDTH : 992px
+ */
+ @media (min-width:$large) {
+    .columns--three {
+        grid-template-columns: repeat(3,1fr);
+
+    }
+}
