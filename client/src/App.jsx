@@ -42,6 +42,14 @@ export default function App() {
           <Button type="primary" link="#">Btn primaire</Button>
         </Column>
       </Columns>
+      <Columns number="two" layout="leftBigger">
+        <Column>
+          <Button type="primary" link="#">Btn primaire</Button>
+        </Column>
+        <Column>
+          <Button type="primary" link="#">Btn primaire</Button>
+        </Column>
+      </Columns>
     </div>
     <Footer></Footer>
    </>

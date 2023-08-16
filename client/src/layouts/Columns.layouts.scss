@@ -17,6 +17,12 @@
         grid-template-columns: repeat(2,1fr);
         grid-gap: 3rem;
     }
+    .columns.columns--leftBigger {
+        grid-template-columns: 2fr 1fr;
+    }
+    .columns.columns--rightBigger {
+        grid-template-columns: 1fr 2fr;
+    }
 }
 
 /*
