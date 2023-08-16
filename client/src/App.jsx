@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer"
 import "./App.scss"
 import Button from "./features/forms/button.features"
 import {Columns, Column} from "./layouts/Columns.layouts"
+import { Heading, Subheading } from "./features/elements/Headings.features"
 
  
 export default function App() {
@@ -22,7 +23,8 @@ export default function App() {
       </Routes>
 
 
-        
+        <Heading tag="h1" level="secondary">Super titre test</Heading>
+        <Subheading>Super sous-titre</Subheading>
       <Columns number="three">
         <Column>
           <Button type="secondary" link="#">Btn secondaire</Button>
@@ -32,14 +34,6 @@ export default function App() {
         </Column>
         <Column>
           <Button type="secondary" link="#">Btn secondaire</Button>
-        </Column>
-      </Columns>
-      <Columns number="two">
-        <Column>
-          <Button type="primary" link="#">Btn primaire</Button>
-        </Column>
-        <Column>
-          <Button type="primary" link="#">Btn primaire</Button>
         </Column>
       </Columns>
       <Columns number="two" layout="leftBigger">
