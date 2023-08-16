@@ -68,8 +68,8 @@ $xLarge: 1160px;
     }
     &::before {
         background-color: $background;
-        -webkit-mask-image: url('/dist/assets/img/dots.svg');
-        mask-image: url('/dist/assets/img/dots.svg');
+        -webkit-mask-image: url('/img/dots.svg');
+        mask-image: url('/img/dots.svg');
     }
 }
 

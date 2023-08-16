@@ -11,10 +11,8 @@ const Header = () => {
         const timers = []
 
         elements.forEach(element => {
-            console.log(element.dataset.appear)
             const timer = setTimeout(() => {
                 element.classList.remove('loadHome')
-                console.log(element)
             }, element.dataset.appear)
 
             timers.push(timer)
@@ -22,6 +20,7 @@ const Header = () => {
         })
         return () => clearTimeout(timers)
     }, [])
+
     return (
         <header>
             <Link to="/" className="logo loadHome"  data-appear="1000">
