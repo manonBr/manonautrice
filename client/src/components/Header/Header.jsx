@@ -2,7 +2,6 @@ import * as React from "react"
 import { Link } from "react-router-dom"
 import Nav from "./Nav"
 import "./Header.scss"
-import { delayBeforeApparition } from "../../helpers/apparition.helpers"
 import { useEffect } from "react"
 
 const Header = () => {
