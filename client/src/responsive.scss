@@ -1,20 +1,4 @@
 /*
- * MIN-WIDTH : 576px
- */
- @media (min-width:$small) {
-
-    // PRESENTATION 
-
-    .presentation {
-        &__img {
-        width: 50%;
-        padding-bottom: 50%;
-        }
-    }
-    
-}
-
-/*
  * MIN-WIDTH : 768px
  */
 @media (min-width:$medium) {
@@ -72,51 +56,6 @@
     //     }
     // }
 
-    // PRESENTATION 
-
-    .presentation {
-        &__img {
-            position: relative;
-            width: 80%;
-            padding-bottom: 80%;
-            // &::before {
-            //     content: url(/dist/assets/img/blob.svg);
-            //     position: absolute;
-            //     width: 140%;
-            //     height: 120%;
-            //     z-index: -1;
-            //     bottom: 0rem;
-            //     left: -3rem;
-            // }
-        }
-        &__content {
-            .title {
-                margin-bottom: 2rem;
-            }
-        }
-        &__links {
-            a {
-                margin-top: 0;
-                margin-right: 1rem;
-            }
-        }
-        .section__container {
-            @include columns(1,2);
-            gap: 1rem;
-        }
-    }
-
-    // INSPIRATIONS
-    .inspirations {
-        &__container {
-            @include columns(2);
-            grid-gap: 3rem;
-        }
-        &__item {
-            margin-bottom: 2rem;
-        }
-    }
-
     // SOCIALS
 
     .socials {
@@ -133,19 +72,6 @@
                 width: 80px;
                 margin: 2rem;
             }
-        }
-    }
-
-}
-
-/*
- * MIN-WIDTH : 992px
- */
-@media (min-width:$large) {
-    // INSPIRATIONS
-    .inspirations {
-        &__container {
-            @include columns(3);
         }
     }
 

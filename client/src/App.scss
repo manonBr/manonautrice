@@ -112,41 +112,7 @@ section:not(:first-of-type) {
   }
 }
 
-// PRESENTATION 
 
-.presentation {
-  &__img {
-    width: 60%;
-    height: 0;
-    border-radius: 50%;
-    background-image: url('/dist/assets/img/portrait.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: auto;
-    margin-top: 1rem;
-    padding-bottom: 60%;
-    position: relative;
-    &::before {
-      content: url(/dist/assets/img/blob.svg);
-      position: absolute;
-      width: 140%;
-      height: 120%;
-      z-index: -1;
-      bottom: 0rem;
-      left: -3rem;
-    }
-  }
-  &__content {
-    margin-top: 2rem;
-  }
-  &__links {
-    margin-top: 2rem;
-    a {
-      margin-top: 1rem;
-    }
-  }
-}
 
 
 // INSPIRATIONS
