@@ -95,32 +95,11 @@
             margin-right: 1rem;
         }
         }
-        .section__container {
-            @include columns(1,2);
-            gap: 1rem;
-        }
     }
     // INSPIRATIONS
     .inspirations {
-        &__container {
-            @include columns(2);
-            grid-gap: 3rem;
-        }
         &__item {
             margin-bottom: 2rem;
         }
     }
-}
-
-/*
- * MIN-WIDTH : 992px
- */
- @media (min-width:$large) {
-    // INSPIRATIONS
-    .inspirations {
-        &__container {
-            @include columns(3);
-        }
-    }
-
 }
