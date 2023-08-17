@@ -1,6 +1,7 @@
 import * as React from "react"
 import "./Inspirations.features.scss"
 import { Columns } from "../../layouts/Columns.layouts"
+import { Subheading } from "../elements/Headings.features"
 
 /**
  * 
@@ -16,7 +17,7 @@ const Inspiration = ({title, image, altTag, children:content}) => {
         <>
             <Columns number="two" layout="rightBigger" className="inspirations__item__ttl">
                 <img src={image} alt={altTag} class="illustrations" />
-                <h2 class="subttl">{title}</h2>
+                <Subheading>{title}</Subheading>
             </Columns>
             <p>{content}</p>
         </>
