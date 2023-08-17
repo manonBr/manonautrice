@@ -1,0 +1,19 @@
+@import '../../config.scss';
+
+.inspirations {
+    &__item__ttl {
+      position: relative;
+      display: flex;
+      margin-bottom: 1.5rem;
+    }
+    img {
+      max-width: 40%;
+      transition: 0.2s;
+      margin-left: 0.5rem;
+    }
+    .subttl {
+      align-self: center;
+      max-width: 50%;
+      margin-left: 1rem;
+    }
+  }
