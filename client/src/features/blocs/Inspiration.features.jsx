@@ -15,10 +15,10 @@ const Inspiration = ({title, image, altTag, children:content}) => {
 
     return(
         <>
-            <Columns number="two" layout="rightBigger" className="inspirations__item__ttl">
+            <div className="inspirations__item__ttl">
                 <img src={image} alt={altTag} class="illustrations" />
                 <Subheading>{title}</Subheading>
-            </Columns>
+            </div>
             <p>{content}</p>
         </>
     )
