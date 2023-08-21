@@ -21,29 +21,6 @@ export default function App() {
           <Route path='/ressources' element={<Tools/>}/>
           <Route path='/projets' element={<Projects/>}/>
       </Routes>
-
-
-        <Heading tag="h1" level="secondary">Super titre test</Heading>
-        <Subheading>Super sous-titre</Subheading>
-      <Columns number="three">
-        <Column>
-          <Button type="secondary" link="#">Btn secondaire</Button>
-        </Column>
-        <Column>
-          <Button type="secondary" link="#">Btn secondaire</Button>
-        </Column>
-        <Column>
-          <Button type="secondary" link="#">Btn secondaire</Button>
-        </Column>
-      </Columns>
-      <Columns number="two" layout="leftBigger">
-        <Column>
-          <Button type="primary" link="#">Btn primaire</Button>
-        </Column>
-        <Column>
-          <Button type="primary" link="#">Btn primaire</Button>
-        </Column>
-      </Columns>
     </div>
     <Footer></Footer>
    </>
