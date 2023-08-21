@@ -1,9 +1,10 @@
 import React from "react"
 import "./Home.scss"
 import { Column, Columns } from "../layouts/Columns.layouts"
-import { Heading } from "../features/elements/Headings.features"
+import { Heading, Subheading } from "../features/elements/Headings.features"
 import Button from "../features/forms/button.features"
 import Inspiration from "../features/blocs/Inspiration.features"
+import { Link } from "react-router-dom"
 
 const Home = () => {
     return (
@@ -36,6 +37,20 @@ const Home = () => {
                             <Inspiration title="Titre 3" image="/img/fantasy.png" altTag="Illustration fantasy">LALALA</Inspiration>
                         </Column>
                     </Columns>
+                </div>
+            </section>
+
+            <section className="socials">
+                <div className="section__container">
+                    <Heading level="primary">Titre</Heading>
+                    <div class="socials__subttls">
+                        <Subheading level="secondary">... bla bla bla</Subheading>
+                        <Subheading level="secondary">... bla bla bla</Subheading>
+                    </div>
+                    <div class="socials__links">
+                        <Link to="https://www.instagram.com/manonautrice/" target="_blank"><img src="/img/instagram.png" alt="Logo Instagram" /></Link>
+                        <Link to="https://www.tiktok.com/@manon.autrice" target="_blank"><img src="/img/tiktok.png" alt="Logo TikTok" /></Link>
+                    </div>
                 </div>
             </section>
         </>
