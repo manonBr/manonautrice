@@ -25,20 +25,6 @@ const Nav = () => {
         }
     }
 
-    // document.querySelector('.menu__item--hasChildren a').addEventListener('click', (e) => {
-    //     e.preventDefault()
-    //     e.target.nextElementSibling.classList.toggle('visible')
-    //     e.target.classList.toggle('primary')
-    // })
-    // document.addEventListener('click', (e) => {
-    //     const activeSubMenu = document.querySelector('.menu__item--hasChildren ul.visible')
-    //     if(e.target.closest('.menu__container')){
-    //         return
-    //     }
-    //     if (activeSubMenu) {
-    //         activeSubMenu.previousElementSibling.click()
-    //     }
-    // })
     return (
         <div className="menu">
             <input type="checkbox" id="menu__hamburger" onClick={handleMenuHamburgerClick} />
