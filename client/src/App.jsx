@@ -6,9 +6,6 @@ import Tools from "./pages/Tools"
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 import "./App.scss"
-import Button from "./features/forms/button.features"
-import {Columns, Column} from "./layouts/Columns.layouts"
-import { Heading, Subheading } from "./features/elements/Headings.features"
 
  
 export default function App() {
