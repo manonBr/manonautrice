@@ -7,7 +7,6 @@ import Inspiration from "../features/blocs/Inspiration.features"
 import { Link } from "react-router-dom"
 import fetchData from "../helpers/fetchData"
 import DOMPurify from "dompurify"
-// import axios from "../helpers/axios"
 
 const Home = () => {
 
@@ -30,10 +29,6 @@ const Home = () => {
         }
         getText()
     }, [])
-    
-    console.log(texts)
-    
-
 
     return (
         <>
