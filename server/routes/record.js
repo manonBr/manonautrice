@@ -12,7 +12,7 @@ const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
  
  
-// This section will help you get a list of all the records.
+// Getting some text content.
 recordRoutes.route("/content").get(async function (req, res) {
   try {
     const db_connect = await dbo.getDb("manonautrice");
@@ -22,6 +22,31 @@ recordRoutes.route("/content").get(async function (req, res) {
     throw err;
   }
 });
+
+recordRoutes.route("/content/:name").get(async function (req, res) {
+  try {
+    const db_connect = await dbo.getDb("manonautrice");
+    let myquery = { name: req.params.name };
+    const result = await db_connect.collection("ma_textcontent").findOne(myquery);
+    res.json(result);
+  } catch (err) {
+    throw err;
+  }
+});
+
+// Getting some images
+recordRoutes.route("/images").get(async function (req, res) {
+  try {
+    const db_connect = await dbo.getDb("manonautrice");
+    const result = await db_connect.collection("ma_images").find({}).toArray();
+    res.json(result);
+  } catch (err) {
+    throw err;
+  }
+});
+
+
+// Examples of how create routes
 
 recordRoutes.route("/record").get(async function (req, res) {
   try {
