@@ -11,6 +11,7 @@ import DOMPurify from "dompurify"
 const Home = () => {
 
     const [texts, setTexts] = useState('')
+    const [images, setImages] = useState('')
 
     useEffect(() => {
         const getText = async () => {
@@ -27,9 +28,24 @@ const Home = () => {
             )
             setTexts(values)
         }
+        const getImages = async () => {
+            const datas = await fetchData("/images")
+            const values = []
+            datas.data.forEach(
+                image => {
+                    values[image.name] = {
+                        'id'        : image._id,
+                        'url'     : image.url,
+                        'alt_tag'   : image.alt_tag
+                    }
+                }
+            )
+            setImages(values)
+        }
         getText()
+        getImages()
     }, [])
-
+    
     return (
         <>
             <section className="presentation">
@@ -41,8 +57,8 @@ const Home = () => {
                             </Heading>
                             <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(texts['short_presentation']?.content)}}></div>
                             <div className="presentation__links">
-                                <Button link="#" type="primary">Call to action 1</Button>
-                                <Button link="#" type="secondary">Call to action 2</Button>
+                                <Button link="#" type="primary">Mon projet chouchou</Button>
+                                <Button link="#" type="secondary">Mes templates Notion</Button>
                             </div>
                         </Column>
                 </Columns>
@@ -57,7 +73,7 @@ const Home = () => {
                         {
                             texts['inspirations'] && texts['inspirations']?.content?.map((content) => (
                                 <Column className="inspirations__item" key={content.tex_name}>
-                                    <Inspiration title={content.tex_title} image="/img/fantasy.png" altTag="Illustration fantasy">
+                                    <Inspiration title={content.tex_title} image={images[content.tex_name]?.url} altTag={images[content.tex_name]?.alt_tag}>
                                     <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(content.tex_fr)}}></div>
                                     </Inspiration>
                                 </Column>
@@ -80,8 +96,8 @@ const Home = () => {
                         }
                     </div>
                     <div className="socials__links">
-                        <Link to="https://www.instagram.com/manonautrice/" target="_blank"><img src="/img/instagram.png" alt="Logo Instagram" /></Link>
-                        <Link to="https://www.tiktok.com/@manon.autrice" target="_blank"><img src="/img/tiktok.png" alt="Logo TikTok" /></Link>
+                        <Link to="https://www.instagram.com/manonautrice/" target="_blank"><img src={images['instagram']?.url} alt={images['instagram']?.alt_tag} /></Link>
+                        <Link to="https://www.tiktok.com/@manon.autrice" target="_blank"><img src={images['tiktok']?.url} alt={images['tiktok']?.url} /></Link>
                     </div>
                 </div>
             </section>
