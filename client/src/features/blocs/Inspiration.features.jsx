@@ -19,7 +19,7 @@ const Inspiration = ({title, image, altTag, children:content}) => {
                 <img src={image} alt={altTag} className="illustrations" />
                 <Subheading>{title}</Subheading>
             </div>
-            <p>{content}</p>
+            {content}
         </>
     )
 }

@@ -56,7 +56,7 @@ const Home = () => {
                     <Columns number="three" className="inspirations__container">
                         {
                             texts['inspirations'] && texts['inspirations']?.content?.map((content) => (
-                                <Column className="inspirations__item">
+                                <Column className="inspirations__item" key={content.tex_name}>
                                     <Inspiration title={content.tex_title} image="/img/fantasy.png" altTag="Illustration fantasy">
                                     <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(content.tex_fr)}}></div>
                                     </Inspiration>
@@ -75,7 +75,7 @@ const Home = () => {
                     <div className="socials__subttls">
                         {
                             texts['socials'] && texts['socials']?.content?.map((content) => (
-                                <Subheading level="secondary">{content.tex_fr}</Subheading>
+                                <Subheading level="secondary" key={content.tex_key}>{content.tex_fr}</Subheading>
                             ))
                         }
                     </div>
