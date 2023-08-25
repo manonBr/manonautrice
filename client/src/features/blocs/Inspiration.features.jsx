@@ -16,7 +16,7 @@ const Inspiration = ({title, image, altTag, children:content}) => {
     return(
         <>
             <div className="inspirations__item__ttl">
-                <img src={image} alt={altTag} class="illustrations" />
+                <img src={image} alt={altTag} className="illustrations" />
                 <Subheading>{title}</Subheading>
             </div>
             <p>{content}</p>
