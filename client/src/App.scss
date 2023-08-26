@@ -87,7 +87,7 @@ a {
 
 
 .main {
-  margin-top: 8rem;
+  padding-top: 8rem;
 }
 
 section:not(:first-of-type) {
@@ -114,42 +114,6 @@ section:not(:first-of-type) {
 
 
 
-
-// INSPIRATIONS
-
-.inspirations {
-  margin-top: 3rem;
-  &__item {
-    margin-bottom: 5rem;
-    transition: 0.2s;
-    &:hover,
-    &:active,
-    &:focus {
-      transform: scale(1.05);
-      transition: 0.2s;
-      img {
-        transform: rotate(15deg);
-        transition: 0.2s;
-      }
-    }
-  }
-  &__item__ttl {
-    position: relative;
-    display: flex;
-    // justify-content: space-around;
-    margin-bottom: 1.5rem;
-  }
-  img {
-    max-width: 40%;
-    transition: 0.2s;
-    margin-left: 0.5rem;
-  }
-  .subttl {
-    align-self: center;
-    max-width: 50%;
-    margin-left: 1rem;
-  }
-}
 
 // SOCIALS
 

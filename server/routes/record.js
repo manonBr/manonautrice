@@ -45,6 +45,17 @@ recordRoutes.route("/images").get(async function (req, res) {
   }
 });
 
+// Getting some personnal informations
+recordRoutes.route("/details").get(async function (req, res) {
+  try {
+    const db_connect = await dbo.getDb("manonautrice");
+    const result = await db_connect.collection("ma_details").find({}).toArray();
+    res.json(result);
+  } catch (err) {
+    throw err;
+  }
+});
+
 
 // Examples of how create routes
 
