@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import "./Home.scss"
 import { Column, Columns } from "../layouts/Columns.layouts"
 import { Heading, Subheading } from "../features/elements/Headings.features"
@@ -8,12 +8,18 @@ import { Link } from "react-router-dom"
 import fetchData from "../helpers/fetchData"
 import DOMPurify from "dompurify"
 
-const Home = () => {
 
+const Home = () => {
+    
     const [texts, setTexts] = useState('')
     const [images, setImages] = useState('')
 
+    const presentation = useRef()
+    const inspirations = useRef()
+    const socials = useRef()
+    
     useEffect(() => {
+        // Get content from MongoDB
         const getText = async () => {
             const datas = await fetchData("/content")
             const values = []
@@ -44,11 +50,29 @@ const Home = () => {
         }
         getText()
         getImages()
+
+        // Set Intersection Observer
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach((entry) => {
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('reveal--visible')
+                        observer.unobserve(entry.target)
+                    }
+                })
+            },
+            { root: null, rootMargin: "0px", threshold: 0.5 }
+        )
+        observer.observe(presentation.current)
+        observer.observe(inspirations.current)
+        observer.observe(socials.current)
+
+        return () => observer.disconnect()
     }, [])
     
     return (
         <>
-            <section className="presentation">
+            <section className="presentation reveal" ref={presentation}>
                 <Columns number="2" layout="rightBigger" className="section__container">
                         <Column className="presentation__img"></Column>
                         <Column className="presentation__content">
@@ -64,7 +88,7 @@ const Home = () => {
                 </Columns>
             </section>
             
-            <section className="inspirations">
+            <section className="inspirations reveal" ref={inspirations}>
                 <div className="section__container">
                     <Heading level="primary">
                         {texts['inspirations']?.title}
@@ -83,7 +107,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="socials">
+            <section className="socials reveal" ref={socials}>
                 <div className="section__container">
                     <Heading level="primary">
                         {texts['socials']?.title}
