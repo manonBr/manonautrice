@@ -39,9 +39,9 @@ const Nav = () => {
                     <li className="menu__item menu__item--hasChildren" onClick={handleMenuItemWithChildrenClick}>
                         <Link to="/ressources">Ressources</Link>
                         <ul>
-                            <li className="menu__subitem"><Link to="/">Templates Notion</Link></li>
-                            <li className="menu__subitem"><Link to="/">Fiches personnages</Link></li>
-                            <li className="menu__subitem"><Link to="/">Site internet : bonnes pratiques</Link></li>
+                            <li className="menu__subitem"><Link to="/ressources/templates-notion">Templates Notion</Link></li>
+                            <li className="menu__subitem"><Link to="/ressources/fiches-personnages">Fiches personnages</Link></li>
+                            <li className="menu__subitem"><Link to="/ressources/site-internet">Site internet : bonnes pratiques</Link></li>
                         </ul>
                     </li>
                     <li className="menu__item"><Link to="/projets">Projets en cours</Link></li>
