@@ -68,18 +68,4 @@
         margin: auto;
     }
 
-    .svgSketch {
-        display: block;
-        svg {
-            display: inline-block;
-            position: fixed;
-            top: 0;
-            height: 100%;
-            stroke-width: 2px;
-            right: -10px;
-            stroke: var(--colorBase);
-            z-index: 1;
-        }
-    }
-
 }

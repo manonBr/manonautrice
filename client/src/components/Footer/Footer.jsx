@@ -15,15 +15,15 @@ const Footer = () => {
     }, [])
 
     return (
-        <footer>
-            <p>
-                {text.tex_fr}
-            </p>
-            <p>
-                <Link to="/mentions-legales"> Mentions légales </Link> | 
-                <Link to="/politique-confidentialite"> Politique de confidentialité </Link>
-            </p>
-        </footer>
+        <>
+            <footer>
+                <p>
+                    {text.tex_fr} | 
+                    <Link to="/mentions-legales"> Mentions légales </Link> | 
+                    <Link to="/politique-confidentialite"> Politique de confidentialité </Link>
+                </p>
+            </footer>
+        </>
     )
 }
 

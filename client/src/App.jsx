@@ -10,6 +10,7 @@ import Legals from "./pages/Legals"
 import Privacy from "./pages/Privacy"
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
+import Sketch from "./features/elements/Sketch"
 import "./App.scss"
 
  
@@ -30,6 +31,7 @@ export default function App() {
       </Routes>
     </div>
     <Footer></Footer>
+    <Sketch></Sketch>
    </>
  )
 }
