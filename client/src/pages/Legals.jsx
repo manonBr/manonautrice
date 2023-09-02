@@ -3,6 +3,7 @@ import { Heading, Subheading } from "../features/elements/Headings.features"
 import fetchData from "../helpers/fetchData"
 import DOMPurify from "dompurify"
 import { Link } from "react-router-dom"
+import LinkItem from "../features/elements/LinkItem"
 
 const Legals = () => {
 
@@ -16,8 +17,6 @@ const Legals = () => {
         getLegals()
     }, [])
 
-    console.log(legals)
-
     return (
         <div className="Legals">
             <Heading level="primary">
@@ -27,7 +26,7 @@ const Legals = () => {
                 <Subheading>1 - Édition du site</Subheading>
                 <p>
                     En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet 
-                    <a href="/"> https://www.manonautrice.fr </a>
+                    <LinkItem href="/"> https://www.manonautrice.fr </LinkItem>
                     l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi:</p>
                 <p>
                     <strong>Propriétaire du site</strong> : Manon Bruimaud - Contact : manon.bruimaud@gmail.com
@@ -60,15 +59,15 @@ const Legals = () => {
 
                 <p>
                     Manon Bruimaud ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site 
-                    <a href="/"> https://www.manonautrice.fr</a>.
+                    <LinkItem href="/"> https://www.manonautrice.fr</LinkItem>.
                 </p>
                 <p>
                     Manon Bruimaud décline toute responsabilité quant à l’utilisation qui pourrait être faite des informations et contenus présents sur 
-                    <a href="/"> https://www.manonautrice.fr</a>.
+                    <LinkItem href="/"> https://www.manonautrice.fr</LinkItem>.
                 </p>
                 <p>
                     Manon Bruimaud s’engage à sécuriser au mieux le site 
-                    <a href="/"> https://www.manonautrice.fr</a>,
+                    <LinkItem href="/"> https://www.manonautrice.fr</LinkItem>,
                     cependant sa responsabilité ne pourra être mise en cause si des données indésirables sont importées et installées sur son site à son insu.
                 </p>
                 <p>
@@ -81,15 +80,15 @@ const Legals = () => {
             <div className="container">
                 <Subheading>4 - CNIL et gestion des données personnelles.</Subheading>
 
-                <p>Conformément aux dispositions de la loi 78-17 du 6 janvier 1978 modifiée, l’utilisateur du site <a href="/"> https://www.manonautrice.fr </a> dispose d’un droit d’accès, de modification et de suppression des informations collectées. Pour exercer ce droit, envoyez un message à notre Délégué à la Protection des Données : Manon Bruimaud - manon.bruimaud@gmail.com.</p>
+                <p>Conformément aux dispositions de la loi 78-17 du 6 janvier 1978 modifiée, l’utilisateur du site <LinkItem href="/"> https://www.manonautrice.fr </LinkItem> dispose d’un droit d’accès, de modification et de suppression des informations collectées. Pour exercer ce droit, envoyez un message à notre Délégué à la Protection des Données : Manon Bruimaud - manon.bruimaud@gmail.com.</p>
 
-                <p>Pour plus d'informations sur la façon dont nous traitons vos données (type de données, finalité, destinataire...), lisez notre <a href="/"> https://www.manonautrice.fr </a>/politique-confidentialite.</p>
+                <p>Pour plus d'informations sur la façon dont nous traitons vos données (type de données, finalité, destinataire...), lisez notre <LinkItem href="/"> https://www.manonautrice.fr </LinkItem>/politique-confidentialite.</p>
             </div>
             <div className="container">
                 <Subheading>5 - Liens hypertextes et cookies</Subheading>
-                <p>Le site <a href="/"> https://www.manonautrice.fr </a> contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers <a href="/"> https://www.manonautrice.fr </a>.</p>
+                <p>Le site <LinkItem href="/"> https://www.manonautrice.fr </LinkItem> contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers <LinkItem href="/"> https://www.manonautrice.fr </LinkItem>.</p>
 
-                <p>La navigation sur le site <a href="/"> https://www.manonautrice.fr </a> est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur.</p>
+                <p>La navigation sur le site <LinkItem href="/"> https://www.manonautrice.fr </LinkItem> est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur.</p>
 
                 <p>Un "cookie" est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un utilisateur sur un site. Les données ainsi obtenues permettent d'obtenir des mesures de fréquentation, par exemple.</p>
 
@@ -97,11 +96,11 @@ const Legals = () => {
 
                 <p>Les cookies sont enregistrés pour une durée maximale de 1 mois.</p>
 
-                <p>Pour plus d'informations sur la façon dont nous faisons usage des cookies, lisez notre <a href="/politique-confidentialite"> https://www.manonautrice.fr/politique-confidentialite</a>.</p>
+                <p>Pour plus d'informations sur la façon dont nous faisons usage des cookies, lisez notre <LinkItem href="/politique-confidentialite"> https://www.manonautrice.fr/politique-confidentialite</LinkItem>.</p>
             </div>
             <div className="container">
                 <Subheading>6 - Droit applicable et attribution de juridiction.</Subheading>
-                <p>Tout litige en relation avec l’utilisation du site <a href="/"> https://www.manonautrice.fr </a> est soumis au droit français.</p>
+                <p>Tout litige en relation avec l’utilisation du site <LinkItem href="/"> https://www.manonautrice.fr </LinkItem> est soumis au droit français.</p>
             </div>
 
 
