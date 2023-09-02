@@ -69,7 +69,7 @@ const Nav = () => {
                 <ul>
                     <li className="menu__item"><LinkItem to="/"  onClick={isMobile ? closeMenuHamburger : undefined}>Qui suis-je ?</LinkItem></li>
                     <li className="menu__item menu__item--hasChildren" onClick={handleClickMenuItemWithChildren}>
-                        <LinkItem href="#" ref={menuLinkWithChildren}>Ressources</LinkItem>
+                        <LinkItem href="#" refs={menuLinkWithChildren}>Ressources</LinkItem>
                         <ul ref={subMenu}>
                             <li className="menu__subitem"><LinkItem to="/ressources/templates-notion" onClick={isMobile ? closeMenuHamburger : undefined}>Templates Notion</LinkItem></li>
                             <li className="menu__subitem"><LinkItem to="/ressources/fiches-personnages" onClick={isMobile ? closeMenuHamburger : undefined}>Fiches personnages</LinkItem></li>

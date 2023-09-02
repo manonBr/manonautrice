@@ -5,7 +5,7 @@ import { toggleClassCursor } from "../../helpers/cursor"
 
 const LinkItem = (props) => {
     const cursor = useContext(CursorContext)
-    const {isMobile, ...rest} = props
+    const {isMobile,children, ...rest} = props
 
     const handleMouseEnter = () => {
         toggleClassCursor(cursor, true)
@@ -15,7 +15,7 @@ const LinkItem = (props) => {
     }
 
     return (
-        <Link {...props} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}></Link>
+        <Link {...props} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{children}</Link>
     )
 }
 
