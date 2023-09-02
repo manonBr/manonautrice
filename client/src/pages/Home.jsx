@@ -7,6 +7,7 @@ import Inspiration from "../features/blocs/Inspiration.features"
 import fetchData from "../helpers/fetchData"
 import DOMPurify from "dompurify"
 import LinkItem from "../features/elements/LinkItem"
+import Sketch from "../features/elements/Sketch"
 
 
 const Home = () => {
@@ -82,7 +83,7 @@ const Home = () => {
                             <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(texts['short_presentation']?.content)}}></div>
                             <div className="presentation__links">
                                 <Button link="#" type="primary">Mon projet chouchou</Button>
-                                <Button link="#" type="secondary">Mes templates Notion</Button>
+                                <Button link="/ressources/templates-notion" type="secondary">Mes templates Notion</Button>
                             </div>
                         </Column>
                 </Columns>
@@ -125,6 +126,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <Sketch></Sketch>
+            
         </>
     )
 }

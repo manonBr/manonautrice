@@ -9,8 +9,9 @@ import "./Columns.layouts.scss"
  * @param {Array} props.children - Columns content, using Column component
  * @returns 
  */
-const Columns = ({number, layout, className = "", children:columns}) => {
+const Columns = ({number, layout, reverse, className = "", children:columns}) => {
     let classLayout = ""
+    const classReverse = reverse ? "columns--reverse" : ""
 
     switch (layout) {
         case "leftBigger":
@@ -27,7 +28,7 @@ const Columns = ({number, layout, className = "", children:columns}) => {
     }
 
     return (
-        <div className={`columns columns--${number} ${classLayout} ${className}`}>
+        <div className={`columns columns--${number} ${classLayout} ${classReverse} ${className}`}>
             {columns}
         </div>
 
