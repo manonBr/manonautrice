@@ -3,6 +3,7 @@ import "./Button.features.scss"
 import { useContext } from "react"
 import { CursorContext } from "../../App"
 import { toggleClassCursor } from "../../helpers/cursor"
+import { Link } from "react-router-dom"
 
 /**
  * 
@@ -23,9 +24,10 @@ const Button = ({link, type, children:label}) => {
     }
 
     return (
-        <a href={link} className={"btn btn--" + type} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+
+        <Link to={link} className={"btn btn--" + type} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <span>{label}</span>
-        </a>
+        </Link>
     )
 }
 
