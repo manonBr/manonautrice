@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Nav from "./Nav"
 import "./Header.scss"
 import fetchData from "../../helpers/fetchData"
+import LinkItem from "../../features/elements/LinkItem"
 
 const Header = () => {
 
@@ -41,10 +42,10 @@ const Header = () => {
 
     return (
         <header>
-            <Link to="/" className="logo loadHome"  data-appear="1000">
+            <LinkItem to="/" className="logo loadHome"  data-appear="1000">
                 <img src={images["logoLight"]?.url} alt={images["logoLight"]?.alt_tag} className="logo__img logo__img--light" />
                 <img src={images["logoDark"]?.url} alt={images["logoDark"]?.alt_tag} className="logo__img logo__img--dark" />
-            </Link>
+            </LinkItem>
             <Nav></Nav>
         </header>
 

@@ -1,5 +1,8 @@
 import * as React from "react"
 import "./Button.features.scss"
+import { useContext } from "react"
+import { CursorContext } from "../../App"
+import { toggleClassCursor } from "../../helpers/cursor"
 
 /**
  * 
@@ -10,9 +13,17 @@ import "./Button.features.scss"
  * @returns 
  */
 const Button = ({link, type, children:label}) => {
+    const cursor = useContext(CursorContext)
+
+    const handleMouseEnter = () => {
+        toggleClassCursor(cursor, true)
+    }
+    const handleMouseLeave = () => {
+        toggleClassCursor(cursor, false)
+    }
 
     return (
-        <a href={link} className={"btn btn--" + type}>
+        <a href={link} className={"btn btn--" + type} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <span>{label}</span>
         </a>
     )

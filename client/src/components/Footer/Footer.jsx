@@ -1,7 +1,7 @@
 import  React, { useEffect, useState } from "react"
 import "./Footer.scss"
 import fetchData from "../../helpers/fetchData"
-import { Link } from "react-router-dom"
+import LinkItem from "../../features/elements/LinkItem"
 
 const Footer = () => {
     const [text, setText] = useState('')
@@ -19,8 +19,8 @@ const Footer = () => {
             <footer>
                 <p>
                     {text.tex_fr} | 
-                    <Link to="/mentions-legales"> Mentions légales </Link> | 
-                    <Link to="/politique-confidentialite"> Politique de confidentialité </Link>
+                    <LinkItem to="/mentions-legales"> Mentions légales </LinkItem> | 
+                    <LinkItem to="/politique-confidentialite"> Politique de confidentialité </LinkItem>
                 </p>
             </footer>
         </>

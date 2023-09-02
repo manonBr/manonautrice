@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react"
-import { Link } from "react-router-dom"
 import { useMobileSize } from "../../hooks/useScreenSize"
 import "./Nav.scss"
+import LinkItem from "../../features/elements/LinkItem"
 
 const Nav = () => {
     const hamburgerMenuIcon = useRef()
@@ -67,18 +67,18 @@ const Nav = () => {
             </label>
             <div className="menu__container s-hidden loadHome" data-appear="1500" ref={menu}>
                 <ul>
-                    <li className="menu__item"><Link to="/"  onClick={isMobile ? closeMenuHamburger : undefined}>Qui suis-je ?</Link></li>
+                    <li className="menu__item"><LinkItem to="/"  onClick={isMobile ? closeMenuHamburger : undefined}>Qui suis-je ?</LinkItem></li>
                     <li className="menu__item menu__item--hasChildren" onClick={handleClickMenuItemWithChildren}>
-                        <a href="#" ref={menuLinkWithChildren}>Ressources</a>
+                        <LinkItem href="#" ref={menuLinkWithChildren}>Ressources</LinkItem>
                         <ul ref={subMenu}>
-                            <li className="menu__subitem"><Link to="/ressources/templates-notion" onClick={isMobile ? closeMenuHamburger : undefined}>Templates Notion</Link></li>
-                            <li className="menu__subitem"><Link to="/ressources/fiches-personnages" onClick={isMobile ? closeMenuHamburger : undefined}>Fiches personnages</Link></li>
-                            <li className="menu__subitem"><Link to="/ressources/site-internet" onClick={isMobile ? closeMenuHamburger : undefined}>Site internet : bonnes pratiques</Link></li>
+                            <li className="menu__subitem"><LinkItem to="/ressources/templates-notion" onClick={isMobile ? closeMenuHamburger : undefined}>Templates Notion</LinkItem></li>
+                            <li className="menu__subitem"><LinkItem to="/ressources/fiches-personnages" onClick={isMobile ? closeMenuHamburger : undefined}>Fiches personnages</LinkItem></li>
+                            <li className="menu__subitem"><LinkItem to="/ressources/site-internet" onClick={isMobile ? closeMenuHamburger : undefined}>Site internet : bonnes pratiques</LinkItem></li>
                         </ul>
                     </li>
-                    <li className="menu__item"><Link to="/projets" onClick={isMobile ? closeMenuHamburger : undefined}>Projets en cours</Link></li>
-                    <li className="menu__item"><Link to="https://www.instagram.com/manonautrice/" target="_blank">Instagram</Link></li>
-                    <li className="menu__item"><Link to="https://www.tiktok.com/@manon.autrice" target="_blank">TikTok</Link></li>
+                    <li className="menu__item"><LinkItem to="/projets" onClick={isMobile ? closeMenuHamburger : undefined}>Projets en cours</LinkItem></li>
+                    <li className="menu__item"><LinkItem to="https://www.instagram.com/manonautrice/" target="_blank">Instagram</LinkItem></li>
+                    <li className="menu__item"><LinkItem to="https://www.tiktok.com/@manon.autrice" target="_blank">TikTok</LinkItem></li>
                 </ul>
             </div>
         </div>

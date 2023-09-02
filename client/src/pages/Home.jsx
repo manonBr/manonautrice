@@ -4,9 +4,9 @@ import { Column, Columns } from "../layouts/Columns.layouts"
 import { Heading, Subheading } from "../features/elements/Headings.features"
 import Button from "../features/forms/button.features"
 import Inspiration from "../features/blocs/Inspiration.features"
-import { Link } from "react-router-dom"
 import fetchData from "../helpers/fetchData"
 import DOMPurify from "dompurify"
+import LinkItem from "../features/elements/LinkItem"
 
 
 const Home = () => {
@@ -120,8 +120,8 @@ const Home = () => {
                         }
                     </div>
                     <div className="socials__links">
-                        <Link to="https://www.instagram.com/manonautrice/" target="_blank"><img src={images['instagram']?.url} alt={images['instagram']?.alt_tag} /></Link>
-                        <Link to="https://www.tiktok.com/@manon.autrice" target="_blank"><img src={images['tiktok']?.url} alt={images['tiktok']?.url} /></Link>
+                        <LinkItem to="https://www.instagram.com/manonautrice/" target="_blank"><img src={images['instagram']?.url} alt={images['instagram']?.alt_tag} /></LinkItem>
+                        <LinkItem to="https://www.tiktok.com/@manon.autrice" target="_blank"><img src={images['tiktok']?.url} alt={images['tiktok']?.url} /></LinkItem>
                     </div>
                 </div>
             </section>

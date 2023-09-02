@@ -5,13 +5,13 @@
     .s-hidden {
         display: block;
     }
-    // a,
-    // button {
-    //     cursor: none;
-    // }
-    // body {
-    //     cursor: none;
-    // }
+    a,
+    button {
+        cursor: none;
+    }
+    body {
+        cursor: none;
+    }
     section:not(:first-of-type) {
         margin: 0;
     }
@@ -35,27 +35,32 @@
         transition: 1s;
     }
 
-    // #cursor {
-    //     width: 20px;
-    //     height: 20px;
-    //     border-bottom: 20px solid var(--colorSecondary);
-    //     border-left: 20px solid var(--colorPrimary);
-    //     border-radius: 50%;
-    //     position: fixed;
-    //     z-index: 100;
-    //     left: 50%;
-    //     top: 50%;
-    //     transform: translate(-50%, -50%) rotate(270deg);
-    //     pointer-events: none;
-    //     filter: drop-shadow(0 0 10px var(--colorBackground));
-    //     // transition: width 200ms ease-in, height 200ms ease-in;
-    //     &.cursor--hovered {
-    //         width: 30px;
-    //         height: 30px;
-    //         // transition: 200ms;
-    //     }
-    // }
+    // CURSOR
 
+    #cursor {
+        width: 20px;
+        height: 20px;
+        border-bottom: 20px solid var(--colorSecondary);
+        border-left: 20px solid var(--colorPrimary);
+        border-radius: 50%;
+        position: fixed;
+        z-index: 100;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(270deg);
+        pointer-events: none;
+        filter: drop-shadow(0 0 10px var(--colorBackground));
+        transition: 
+            width 0.2s,
+            height 0.2s;
+        &.cursor--hovered {
+            width: 30px;
+            height: 30px;
+            transition: 
+                width 0.2s,
+                height 0.2s;
+        }
+    }
 }
 
 /*

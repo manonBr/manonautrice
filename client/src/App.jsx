@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import {Routes, Route} from "react-router-dom"
 import Home from "./pages/Home"
 import Projects from "./pages/Projects"
@@ -13,25 +13,40 @@ import Footer from "./components/Footer/Footer"
 import Sketch from "./features/elements/Sketch"
 import "./App.scss"
 
+export const CursorContext = React.createContext();
  
 export default function App() {
- return (
-   <>
-    <Header></Header>
-    <div className="main container">
-      <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/ressources' element={<Tools/>}/>
-          <Route path='/ressources/templates-notion' element={<NotionTools/>}/>
-          <Route path='/ressources/fiches-personnages' element={<CharactersTools/>}/>
-          <Route path='/ressources/site-internet' element={<WebsiteTools/>}/>
-          <Route path='/projets' element={<Projects/>}/>
-          <Route path='/mentions-legales' element={<Legals/>}/>
-          <Route path='/politique-confidentialite' element={<Privacy/>}/>
-      </Routes>
-    </div>
-    <Footer></Footer>
-    <Sketch></Sketch>
-   </>
- )
+  let links = []
+  const cursor = useRef()
+  
+  useEffect(() => {
+    links = document.querySelectorAll("a, button")
+    document.addEventListener("mousemove", function (e) {
+        cursor.current.style.left = e.clientX + "px"
+        cursor.current.style.top = e.clientY + "px"
+    })
+  }, [])
+
+  return (
+    <>
+      <CursorContext.Provider value={cursor}>
+        <Header></Header>
+        <div className="main container">
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/ressources' element={<Tools/>}/>
+            <Route path='/ressources/templates-notion' element={<NotionTools/>}/>
+            <Route path='/ressources/fiches-personnages' element={<CharactersTools/>}/>
+            <Route path='/ressources/site-internet' element={<WebsiteTools/>}/>
+            <Route path='/projets' element={<Projects/>}/>
+            <Route path='/mentions-legales' element={<Legals/>}/>
+            <Route path='/politique-confidentialite' element={<Privacy/>}/>
+          </Routes>
+        </div>
+        <Footer></Footer>
+        <Sketch></Sketch>
+        <div id="cursor" ref={cursor}></div>
+      </CursorContext.Provider>
+    </>
+  )
 }
