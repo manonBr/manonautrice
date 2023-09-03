@@ -1,0 +1,110 @@
+@import '../config.scss';
+
+
+section {
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.listing {
+    &.columns--reverse {
+        &::after {
+            left: auto;
+            right: calc((100% - 100vw)/2);
+        }
+    }
+    &::after {
+        content: '';
+        height: 10px;
+        width: 60vw;
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+        left: calc((100% - 100vw)/2);
+        height: 60%;
+        z-index: -1;
+    }
+    &--primary {
+        &::after {
+            background-color: var(--colorPrimary);
+        }
+    }
+    &--secondary {
+        &::after {
+            background-color: var(--colorSecondary);
+        }
+    }
+    &__illustration {
+        max-width: 70%;
+        margin: auto;
+    }
+    &__img {
+        border: 15px solid var(--colorBackground);
+    }
+    &__details {
+        color: $white;
+        margin: 2rem 0 1rem;
+    }
+}
+
+  /*
+ * MAX-WIDTH : 768px
+ */
+ @media (max-width:$medium) {
+     .listing {
+         grid-template-columns: 1fr;
+        }
+        // Override of some columns behavior in this component
+        .columns--two {
+            &.columns--reverse {
+                .columns__item:first-of-type {
+                    order: 0;
+                }
+            }
+        }
+    }
+    
+    
+/*
+* MIN-WIDTH : 768px
+*/
+@media (min-width:$medium) {
+    section {
+        padding: 10rem 0 4rem;
+        &:first-of-type {
+            margin-top: -5rem;
+        }
+    }
+    .subttl {
+        margin-top: 5rem;
+    }
+    .listing {
+        &::after {
+            width: 60vw;
+        }
+        &__illustration {
+            max-width: 100%;
+        }
+        &__description {
+            // padding: 3rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1rem;
+        }
+        &__details {
+            margin: 3rem 0 1rem;
+            color: var(--colorBase);
+        }
+    }    
+}
+/*
+* MIN-WIDTH : 1160px
+*/
+@media (min-width:$xLarge) {
+    .listing {
+        &::after {
+            width: 55vw;
+        }
+    }
+ }
