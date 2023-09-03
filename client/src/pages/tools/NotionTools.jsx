@@ -1,6 +1,5 @@
 import React from "react"
 import { Heading } from "../../features/elements/Headings.features"
-import "./NotionTools.scss"
 import Listing from "../../components/Listing"
 import Quote from "../../components/Quote"
 
@@ -21,12 +20,12 @@ const NotionTools = () => {
             </Listing>
             <Listing 
                 title="Crée ton roman" 
-                img={{url: "/img/socialTemplate.jpg", alt_tag: "Image d'aperçu du template Notion 'Crée ton roman'"}} 
-                link="https://www.notion.so/fr-fr/templates/reseaux-sociaux" 
+                img={{url: "/img/writingTemplate.jpg", alt_tag: "Image d'aperçu du template Notion 'Crée ton roman'"}} 
+                link="https://www.notion.so/fr-fr/templates/AAAAAH" 
                 level="secondary"
                 reverse={true}
             >
-                <p>Un modèle qui regroupe le brainstorming, et une visualisation précises des publications à venir et programmés sur différents réseaux sociaux. Pensé essentiellement pour un usage solo, il s'adapte parfaitement à une petite équipe. Ce modèle se veut simple et très visuel afin de gérer facilement sa présence en ligne sans perdre de temps.</p>
+                <p>A écrire</p>
             </Listing>
 
             <Quote>Développeuse web, passionnée de technologies et écrivaine à mes heures perdues, j'ai rapidement adopté Notion pour organiser mon quotidien et mes (très) différents projets.</Quote>
