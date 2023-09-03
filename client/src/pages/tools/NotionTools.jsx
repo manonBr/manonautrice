@@ -1,5 +1,5 @@
 import React from "react"
-import { Heading, Subheading } from "../../features/elements/Headings.features"
+import { Heading } from "../../features/elements/Headings.features"
 import "./NotionTools.scss"
 import Listing from "../../components/Listing"
 import Quote from "../../components/Quote"
