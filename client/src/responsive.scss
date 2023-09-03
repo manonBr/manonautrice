@@ -18,7 +18,8 @@
     section {
         min-height: 70vh;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
     }
     .main {
         padding-top: 4rem;
