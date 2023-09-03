@@ -1,3 +1,5 @@
+@import '../config.scss';
+
 .quotation {
     font-size: 2rem;
     font-style: italic;
@@ -10,13 +12,39 @@
         font-size: 4rem;
         position: absolute;
         &--left {
-            top: -2rem;
-            left: -2rem;
+            top: -4rem;
+            left: 0rem;
         }
         &--right {
-            bottom: -2rem;
-            right: -2rem;
+            bottom: -4rem;
+            right: 0rem;
         }
+    }
+    &__author {
+        padding-top: 4rem;
+        font-size: 1.2rem;
+    }
+}
 
+/*
+* MIN-WIDTH : 1160px
+*/
+@media (min-width:$xLarge) {
+    .quotation {
+        &__mark {
+            &--left {
+                top: -2rem;
+                left: -2rem;
+            }
+            &--right {
+                bottom: -2rem;
+                right: -2rem;
+            }
+
+        }
+        &__author {
+        padding-top: 2rem;
+        text-align: right;
+    }
     }
 }
