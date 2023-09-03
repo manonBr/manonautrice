@@ -1,0 +1,22 @@
+.quotation {
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+    p {
+        position: relative;
+    }
+    &__mark {
+        color: var(--colorPrimary);
+        font-size: 4rem;
+        position: absolute;
+        &--left {
+            top: -2rem;
+            left: -2rem;
+        }
+        &--right {
+            bottom: -2rem;
+            right: -2rem;
+        }
+
+    }
+}
