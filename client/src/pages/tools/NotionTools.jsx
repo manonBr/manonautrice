@@ -1,8 +1,6 @@
 import React from "react"
 import { Heading, Subheading } from "../../features/elements/Headings.features"
-import { Column, Columns } from "../../layouts/Columns.layouts"
 import "./NotionTools.scss"
-import Button from "../../features/forms/button.features"
 import Listing from "../../components/Listing"
 import Quote from "../../components/Quote"
 
@@ -22,8 +20,8 @@ const NotionTools = () => {
                 <p>Un modèle qui regroupe le brainstorming, et une visualisation précises des publications à venir et programmés sur différents réseaux sociaux. Pensé essentiellement pour un usage solo, il s'adapte parfaitement à une petite équipe. Ce modèle se veut simple et très visuel afin de gérer facilement sa présence en ligne sans perdre de temps.</p>
             </Listing>
             <Listing 
-                title="Gestion de tes réseaux sociaux" 
-                img={{url: "/img/socialTemplate.jpg", alt_tag: "Image d'aperçu du template Notion de gestion des réseaux sociaux"}} 
+                title="Crée ton roman" 
+                img={{url: "/img/socialTemplate.jpg", alt_tag: "Image d'aperçu du template Notion 'Crée ton roman'"}} 
                 link="https://www.notion.so/fr-fr/templates/reseaux-sociaux" 
                 level="secondary"
                 reverse={true}
