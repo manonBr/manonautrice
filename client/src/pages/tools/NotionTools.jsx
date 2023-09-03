@@ -3,6 +3,8 @@ import { Heading, Subheading } from "../../features/elements/Headings.features"
 import { Column, Columns } from "../../layouts/Columns.layouts"
 import "./NotionTools.scss"
 import Button from "../../features/forms/button.features"
+import Listing from "../../components/Listing"
+import Quote from "../../components/Quote"
 
 const NotionTools = () => {
     return (
@@ -11,59 +13,25 @@ const NotionTools = () => {
                 Templates Notion
             </Heading>
 
-            <section className="socialTemplate template">
-                <div className="section__container">
-                    <Columns number="two" className="template__container template__container--primary">
-                        <Column className="template__illustration">
-                            <img src="/img/socialTemplate.jpg" className="template__img" alt="Image d'aperçu du template Notion de gestion des réseaux sociaux"></img>
-                        </Column>
-                        <Column className="template__description">
-                            <Subheading>Gestion de tes réseaux sociaux</Subheading>
-                            <div className="template__details">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo porro facilis dolorum nisi sit, ipsum eligendi ratione dolore illo recusandae tenetur praesentium neque accusamus totam velit magnam. Perspiciatis, totam laudantium.</p>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo porro facilis dolorum nisi sit, ipsum eligendi ratione dolore illo recusandae tenetur praesentium neque accusamus totam velit magnam. Perspiciatis, totam laudantium.</p>
-                            </div>
-                            <Button link="#" type="secondary">Je vais voir !</Button>
-                        </Column>
-                    </Columns>
-                </div>
-            </section>
+            <Listing 
+                title="Gestion de tes réseaux sociaux" 
+                img={{url: "/img/socialTemplate.jpg", alt_tag: "Image d'aperçu du template Notion de gestion des réseaux sociaux"}} 
+                link="https://www.notion.so/fr-fr/templates/reseaux-sociaux" 
+                level="primary"
+            >
+                <p>Un modèle qui regroupe le brainstorming, et une visualisation précises des publications à venir et programmés sur différents réseaux sociaux. Pensé essentiellement pour un usage solo, il s'adapte parfaitement à une petite équipe. Ce modèle se veut simple et très visuel afin de gérer facilement sa présence en ligne sans perdre de temps.</p>
+            </Listing>
+            <Listing 
+                title="Gestion de tes réseaux sociaux" 
+                img={{url: "/img/socialTemplate.jpg", alt_tag: "Image d'aperçu du template Notion de gestion des réseaux sociaux"}} 
+                link="https://www.notion.so/fr-fr/templates/reseaux-sociaux" 
+                level="secondary"
+                reverse={true}
+            >
+                <p>Un modèle qui regroupe le brainstorming, et une visualisation précises des publications à venir et programmés sur différents réseaux sociaux. Pensé essentiellement pour un usage solo, il s'adapte parfaitement à une petite équipe. Ce modèle se veut simple et très visuel afin de gérer facilement sa présence en ligne sans perdre de temps.</p>
+            </Listing>
 
-            <section className="socialTemplate template">
-                <div className="section__container">
-                    <Columns number="two" className="template__container template__container--secondary" reverse={true}>
-                        <Column className="template__illustration">
-                            <img src="/img/socialTemplate.jpg" className="template__img" alt="Image d'aperçu du template Notion de gestion des réseaux sociaux"></img>
-                        </Column>
-                        <Column className="template__description">
-                            <Subheading>Gestion de tes réseaux sociaux</Subheading>
-                            <div className="template__details">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo porro facilis dolorum nisi sit, ipsum eligendi ratione dolore illo recusandae tenetur praesentium neque accusamus totam velit magnam. Perspiciatis, totam laudantium.</p>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo porro facilis dolorum nisi sit, ipsum eligendi ratione dolore illo recusandae tenetur praesentium neque accusamus totam velit magnam. Perspiciatis, totam laudantium.</p>
-                            </div>
-                            <Button link="#" type="primary">Je vais voir !</Button>
-                        </Column>
-                    </Columns>
-                </div>
-            </section>
-
-            <section className="socialTemplate template">
-                <div className="section__container">
-                    <Columns number="two" className="template__container template__container--primary">
-                        <Column className="template__illustration">
-                            <img src="/img/socialTemplate.jpg" className="template__img" alt="Image d'aperçu du template Notion de gestion des réseaux sociaux"></img>
-                        </Column>
-                        <Column className="template__description">
-                            <Subheading>Gestion de tes réseaux sociaux</Subheading>
-                            <div className="template__details">
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo porro facilis dolorum nisi sit, ipsum eligendi ratione dolore illo recusandae tenetur praesentium neque accusamus totam velit magnam. Perspiciatis, totam laudantium.</p>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo porro facilis dolorum nisi sit, ipsum eligendi ratione dolore illo recusandae tenetur praesentium neque accusamus totam velit magnam. Perspiciatis, totam laudantium.</p>
-                            </div>
-                            <Button link="#" type="secondary">Je vais voir !</Button>
-                        </Column>
-                    </Columns>
-                </div>
-            </section>
+            <Quote>Développeuse web, passionnée de technologies et écrivaine à mes heures perdues, j'ai rapidement adopté Notion pour organiser mon quotidien et mes (très) différents projets.</Quote>
         </>
     )
 }
