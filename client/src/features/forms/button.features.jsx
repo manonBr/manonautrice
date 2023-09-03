@@ -13,7 +13,7 @@ import { Link } from "react-router-dom"
  * @param {string} props.children
  * @returns 
  */
-const Button = ({link, type, children:label}) => {
+const Button = ({link, type, reloadDocument, children:label}) => {
     const cursor = useContext(CursorContext)
 
     const handleMouseEnter = () => {
@@ -22,13 +22,19 @@ const Button = ({link, type, children:label}) => {
     const handleMouseLeave = () => {
         toggleClassCursor(cursor, false)
     }
-
-    return (
-
-        <Link to={link} className={"btn btn--" + type} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <span>{label}</span>
-        </Link>
-    )
+    if(reloadDocument) {
+        return (
+            <Link to={link} className={"btn btn--" + type} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} reloadDocument>
+                <span>{label}</span>
+            </Link>
+        )
+    } else {
+        return (
+            <Link to={link} className={"btn btn--" + type} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                <span>{label}</span>
+            </Link>
+        )
+    }
 }
 
 export default Button
