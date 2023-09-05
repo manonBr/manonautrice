@@ -15,11 +15,9 @@ import "./App.scss"
 export const CursorContext = React.createContext();
  
 export default function App() {
-  let links = []
   const cursor = useRef()
   
   useEffect(() => {
-    links = document.querySelectorAll("a, button")
     document.addEventListener("mousemove", function (e) {
         cursor.current.style.left = e.clientX + "px"
         cursor.current.style.top = e.clientY + "px"
