@@ -10,29 +10,29 @@ import "./Columns.layouts.scss"
  * @returns 
  */
 const Columns = ({number, layout, reverse, className = "", children:columns}) => {
-    let classLayout = ""
     const classReverse = reverse ? "columns--reverse" : ""
 
     switch (layout) {
         case "leftBigger":
-            classLayout = "columns--leftBigger"
-            break;
-
-        case "rightBigger":
-            classLayout = "columns--rightBigger"
-            break;
-
+            return (
+                <div className={`columns columns--${number} columns--leftBigger ${classReverse} ${className}`}>
+                    {columns}
+                </div>
+            )
+            case "rightBigger":
+                return (
+                    <div className={`columns columns--${number} columns--rightBigger ${classReverse} ${className}`}>
+                        {columns}
+                    </div>
+                )
         default:
-            classLayout = ""
-            break;
+            return (
+                <div className={`columns columns--${number} ${classReverse} ${className}`}>
+                    {columns}
+                </div>
+            )
     }
 
-    return (
-        <div className={`columns columns--${number} ${classLayout} ${classReverse} ${className}`}>
-            {columns}
-        </div>
-
-    )
 }
 
 /**
