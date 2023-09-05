@@ -21,10 +21,6 @@ const Sketch = () => {
 
     }, [])
 
-
-    // SVG ANIMATION
-
-
     return (
         <div className="svgSketch">
             <svg viewBox="0 0 427.69 2100" fill="none" preserveAspectRatio="xMidYMax meet">
