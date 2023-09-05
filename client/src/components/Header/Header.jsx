@@ -10,9 +10,6 @@ const Header = () => {
     const [images, setImages] = useState('')
     
     useEffect(() => {
-        const elements = document.querySelectorAll('.loadHome')
-        const timers = []
-
         const getImages = async () => {
             const datas = await fetchData("/images")
             const values = []
@@ -27,7 +24,12 @@ const Header = () => {
             )
             setImages(values)
         }
-        getImages()
+        getImages() 
+    }, [])
+
+    useEffect(() => {
+        const elements = document.querySelectorAll('.loadHome')
+        const timers = []
 
         elements.forEach(element => {
             const timer = setTimeout(() => {

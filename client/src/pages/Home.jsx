@@ -3,7 +3,7 @@ import "./Home.scss"
 import { Column, Columns } from "../layouts/Columns.layouts"
 import { Heading, Subheading } from "../features/elements/Headings.features"
 import Button from "../features/forms/button.features"
-import Inspiration from "../features/blocs/Inspiration.features"
+import Inspiration from "../components/Inspiration.features"
 import fetchData from "../helpers/fetchData"
 import DOMPurify from "dompurify"
 import LinkItem from "../features/elements/LinkItem"
@@ -20,7 +20,6 @@ const Home = () => {
     const socials = useRef()
     
     useEffect(() => {
-        // Get content from MongoDB
         const getText = async () => {
             const datas = await fetchData("/content")
             const values = []
@@ -35,6 +34,10 @@ const Home = () => {
             )
             setTexts(values)
         }
+        getText()
+    }, [])
+
+    useEffect(()=> {
         const getImages = async () => {
             const datas = await fetchData("/images")
             const values = []
@@ -49,10 +52,10 @@ const Home = () => {
             )
             setImages(values)
         }
-        getText()
         getImages()
-
-        // Set Intersection Observer
+    }, [])
+    
+    useEffect(()=> {
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach((entry) => {
@@ -99,7 +102,7 @@ const Home = () => {
                             texts['inspirations'] && texts['inspirations']?.content?.map((content) => (
                                 <Column className="inspirations__item" key={content.tex_name}>
                                     <Inspiration title={content.tex_title} image={images[content.tex_name]?.url} altTag={images[content.tex_name]?.alt_tag}>
-                                    <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(content.tex_fr)}}></div>
+                                        <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(content.tex_fr)}}></div>
                                     </Inspiration>
                                 </Column>
                             ))
