@@ -1,5 +1,5 @@
 import react from 'react'
-import axios from "./axios"
+import axios from "../services/axios"
 
 const fetchData = async (url) => {
     const data = await axios.get(url)
