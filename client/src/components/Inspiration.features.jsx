@@ -1,7 +1,7 @@
 import * as React from "react"
 import "./Inspirations.features.scss"
-import { Columns } from "../../layouts/Columns.layouts"
-import { Subheading } from "../elements/Headings.features"
+import { Columns } from "../layouts/Columns.layouts"
+import { Subheading } from "../features/elements/Headings.features"
 
 /**
  * 
