@@ -1,0 +1,55 @@
+@import '../config.scss';
+
+.mainProject {
+    &__img {
+        img {
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .subttl {
+        margin-bottom: 1rem;
+    }
+    .btn {
+        margin-top: 1rem;
+    }
+}
+
+.secondaryProject {
+    &:last-of-type{
+        &::after {
+            display: none;
+        }
+    }
+    &::after {
+        content: "";
+        width: 100%;
+        border-top: 1px solid #e1d8d8;
+        display: block;
+        margin: 2rem 0;
+    }
+    &__genre {
+        color: var(--colorSecondary);
+        font-weight: bold;
+        &::before {
+            content: '--';
+            display: inline-block;
+            padding-right: 0.25rem;
+        }
+    }
+}
+
+/*
+* MAX-WIDTH : 768px
+*/
+@media (max-width:$small) {
+    .mainProject {
+        grid-template-columns: 1fr;
+    }
+}
