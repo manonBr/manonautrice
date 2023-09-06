@@ -75,9 +75,6 @@ section {
             margin-top: -5rem;
         }
     }
-    .subttl {
-        margin-top: 5rem;
-    }
     .listing {
         &::after {
             width: 60vw;
@@ -96,7 +93,10 @@ section {
             margin: 3rem 0 1rem;
             color: var(--colorBase);
         }
-    }    
+        .subttl {
+            margin-top: 5rem;
+        }    
+    }
 }
 /*
 * MIN-WIDTH : 1160px
