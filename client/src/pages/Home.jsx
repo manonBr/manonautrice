@@ -77,7 +77,7 @@ const Home = () => {
     return (
         <>
             <section className="presentation reveal" ref={presentation}>
-                <Columns number="2" layout="rightBigger" className="section__container">
+                <Columns number="two" layout="rightBigger" className="section__container">
                         <Column className="presentation__img"></Column>
                         <Column className="presentation__content">
                             <Heading level="primary">
