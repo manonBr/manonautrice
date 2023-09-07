@@ -56,6 +56,29 @@ recordRoutes.route("/details").get(async function (req, res) {
   }
 });
 
+// Getting list of all books in projects
+recordRoutes.route("/books").get(async function (req, res) {
+  try {
+    const db_connect = await dbo.getDb("manonautrice");
+    const result = await db_connect.collection("ma_books").find({}).toArray();
+    res.json(result);
+  } catch (err) {
+    throw err;
+  }
+});
+
+// Getting informations of one particular book
+recordRoutes.route("/projets/:name").get(async function (req, res) {
+  try {
+    const db_connect = await dbo.getDb("manonautrice");
+    let myquery = { name: req.params.name };
+    const result = await db_connect.collection("ma_books").findOne(myquery);
+    res.json(result);
+  } catch (err) {
+    throw err;
+  }
+});
+
 
 // Examples of how create routes
 
