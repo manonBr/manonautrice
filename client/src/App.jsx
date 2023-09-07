@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import {Routes, Route} from "react-router-dom"
+import {Routes, Route, Navigate} from "react-router-dom"
 import Home from "./pages/Home"
 import Projects from "./pages/Projects"
 import Tools from "./pages/Tools"
@@ -11,6 +11,9 @@ import Privacy from "./pages/Privacy"
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 import "./App.scss"
+import Project from "./pages/Project"
+import NotFound from "./pages/redirect/NotFound"
+import ErrorServer from "./pages/redirect/ErrorServer"
 
 export const CursorContext = React.createContext();
  
@@ -36,8 +39,12 @@ export default function App() {
             <Route path='/ressources/fiches-personnages' element={<CharactersTools/>}/>
             <Route path='/ressources/site-internet' element={<WebsiteTools/>}/>
             <Route path='/projets' element={<Projects/>}/>
+            <Route path='/projets/:name' element={<Project/>}/>
             <Route path='/mentions-legales' element={<Legals/>}/>
             <Route path='/politique-confidentialite' element={<Privacy/>}/>
+            <Route path='/404' element={<NotFound/>}/>
+            <Route path='/500' element={<ErrorServer/>}/>
+            <Route path='*' element={<Navigate to="/404" />} />
           </Routes>
         </div>
         <Footer></Footer>
