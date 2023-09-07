@@ -18,7 +18,8 @@
  * MIN-WIDTH : 768px
  */
 @media (min-width:$medium) {
-    .columns--three {
+    .columns--three,
+    .columns--four {
         @include columns(2);
         grid-gap: 3rem;
     }
@@ -38,6 +39,8 @@
  @media (min-width:$large) {
     .columns--three {
         @include columns(3);
-
+    }
+    .columns--four {
+        @include columns(4);
     }
 }
