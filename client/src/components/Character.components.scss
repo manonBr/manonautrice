@@ -1,0 +1,46 @@
+@import '../config.scss';
+
+.character {
+    margin: 2rem 0;
+    &__header {
+        position: relative;
+        text-align: center;
+    }
+    img {
+        border-bottom-right-radius: 10%;
+        border-top-left-radius: 10%;
+        width: 60%;
+    }
+    &__name {
+        background-color: var(--colorPrimary);
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        text-transform: uppercase;
+        margin-top: -1rem;
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+    }
+    &__description {
+        margin-top: 1rem;
+    }
+}
+
+/*
+ * MIN-WIDTH : 768px
+ */
+ @media (min-width:$medium) {
+    .character {
+        img {
+            width: 100%;
+        }
+        &__name {
+            position: absolute;
+            left: 0;
+            bottom: 0.2rem;
+            text-align: left;
+            width: fit-content;
+        }
+    }
+ }
+    

@@ -11,11 +11,15 @@ const MainProject = ({image, title, link, children}) => {
                 <img src={image.url} alt={image.alt_tag}/>
             </Column>
             <Column className="mainProject__content">
-                <Subheading>{title}</Subheading>
+                {title &&
+                    <Subheading>{title}</Subheading>
+                }
                 <div className="pitch">
                     {children}
                 </div>
-                <Button link={link} type="secondary">En savoir +</Button>
+                {link &&
+                    <Button link={link} type="secondary">En savoir +</Button>
+                }
             </Column>
         </Columns>
     )
@@ -26,7 +30,7 @@ const SecondaryProject = ({title, genre, children}) => {
         <div className="secondaryProject">
             <Subheading>{title}</Subheading>
             <span className="secondaryProject__genre">{genre}</span>
-            <p>{children}</p>
+            {children}
         </div>
     )
 }
