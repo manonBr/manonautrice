@@ -2,6 +2,8 @@ import React, { useRef, useState, useEffect } from "react"
 import { useMobileSize } from "../../hooks/useScreenSize"
 import "./Nav.scss"
 import LinkItem from "../../features/elements/LinkItem"
+import fetchData from "../../helpers/fetchData"
+import { useNavigate } from "react-router-dom"
 
 const Nav = () => {
     const hamburgerMenuIcon = useRef()
@@ -12,6 +14,9 @@ const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false)
     const isMobile = useMobileSize()
+    const [tools, setTools] = useState()
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         window.addEventListener('mousedown', closeSubMenu)
@@ -19,6 +24,18 @@ const Nav = () => {
             window.removeEventListener('mousedown', closeSubMenu)
         }
     }, [isSubMenuOpen])
+
+    useEffect(() => {
+        fetchData
+        const getTools = async () => {
+            const data = await fetchData("/ressources")
+            if (!data.data) {
+                navigate('/404')
+            }
+            setTools(data.data)
+        }
+        getTools()
+    }, [])
     
     const closeMenuHamburger = () => {
         menu.current.classList.add('s-hidden')
@@ -71,8 +88,13 @@ const Nav = () => {
                     <li className="menu__item menu__item--hasChildren" onClick={handleClickMenuItemWithChildren}>
                         <LinkItem href="#" refs={menuLinkWithChildren}>Ressources</LinkItem>
                         <ul ref={subMenu}>
-                            <li className="menu__subitem"><LinkItem to="/ressources/templates-notion" onClick={isMobile ? closeMenuHamburger : undefined}>Templates Notion</LinkItem></li>
-                            <li className="menu__subitem"><LinkItem to="/ressources/fiches-personnages" onClick={isMobile ? closeMenuHamburger : undefined}>Fiches personnages</LinkItem></li>
+                            {
+                                tools && tools?.map((tool) => (
+                                    <li className="menu__subitem"><LinkItem to={`/ressources/${tool.name}`} onClick={isMobile ? closeMenuHamburger : undefined}>{tool.title}</LinkItem></li>
+                                ))
+                            }
+                                {/* <li className="menu__subitem"><LinkItem to="/ressources/templates-notion" onClick={isMobile ? closeMenuHamburger : undefined}>Templates Notion</LinkItem></li>
+                            <li className="menu__subitem"><LinkItem to="/ressources/creer-un-roman" onClick={isMobile ? closeMenuHamburger : undefined}>Outils : Crée ton roman</LinkItem></li> */}
                             <li className="menu__subitem"><LinkItem to="/ressources/site-internet" onClick={isMobile ? closeMenuHamburger : undefined}>Site internet : bonnes pratiques</LinkItem></li>
                         </ul>
                     </li>
