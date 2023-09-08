@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import fetchData from "../helpers/fetchData";
 import { useState } from "react";
 import { Heading, Subheading } from "../features/elements/Headings.features";
@@ -15,11 +15,11 @@ const Project = () => {
     const [book, setBook] = useState()
     const [content, setContent] = useState()
 
-    const url = window.location.pathname
+    const url = useLocation()
 
     useEffect(() => {
         const getBook = async () => {
-            const data = await fetchData(url)
+            const data = await fetchData(url.pathname)
             if (!data.data) {
                 navigate('/404')
             }
