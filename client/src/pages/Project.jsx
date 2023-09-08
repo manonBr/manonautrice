@@ -4,7 +4,7 @@ import fetchData from "../helpers/fetchData";
 import { useState } from "react";
 import { Heading, Subheading } from "../features/elements/Headings.features";
 import { Column, Columns } from "../layouts/Columns.layouts";
-import { MainProject } from "../components/Projects.components";
+import { EnhancedProject } from "../components/Projects.components";
 import DOMPurify from "dompurify";
 import "./Project.scss"
 import Character from "../components/Character.components";
@@ -44,11 +44,11 @@ const Project = () => {
             
             <section>
                 <Heading level="primary">{book?.title}</Heading>
-                <MainProject 
+                <EnhancedProject 
                     image={{url:book?.illustration?.url, alt_tag:book?.illustration?.alt_tag}}
                 >
                     <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(book?.description)}}></div>
-                </MainProject>
+                </EnhancedProject>
             </section>
 
             <section>

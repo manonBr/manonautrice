@@ -4,7 +4,7 @@ import { Subheading } from "../features/elements/Headings.features"
 import Button from "../features/forms/button.features"
 import "./Projects.components.scss"
 
-const MainProject = ({image, title, link, children}) => {
+const EnhancedProject = ({image, title, link, children}) => {
     return (
         <Columns number="two" layout="rightBigger" className="mainProject">
             <Column className="mainProject__img">
@@ -25,7 +25,7 @@ const MainProject = ({image, title, link, children}) => {
     )
 }
 
-const SecondaryProject = ({title, genre, children}) => {
+const MinimalistProject = ({title, genre, children}) => {
     return (
         <div className="secondaryProject">
             <Subheading>{title}</Subheading>
@@ -37,4 +37,4 @@ const SecondaryProject = ({title, genre, children}) => {
 
 
 
-export {MainProject, SecondaryProject}
+export {EnhancedProject, MinimalistProject}

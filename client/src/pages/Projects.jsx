@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Heading } from "../features/elements/Headings.features"
-import { MainProject, SecondaryProject } from "../components/Projects.components"
+import { EnhancedProject, MinimalistProject } from "../components/Projects.components"
 import { useEffect } from "react"
 import fetchData from "../helpers/fetchData"
 import DOMPurify from "dompurify"
@@ -57,13 +57,13 @@ const Projects = () => {
         <div className="Projects">
             <section>
                 <Heading level="primary">{content?.currentTitle?.fr}</Heading>
-                <MainProject 
+                <EnhancedProject 
                     image={{url:currentBook?.illustration?.url, alt_tag:currentBook?.illustration?.alt_tag}}
                     title= {currentBook?.title}
                     link={`/projets/${currentBook?.name}`}
                 >
                     <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(currentBook?.pitch)}}></div>
-                </MainProject>
+                </EnhancedProject>
             </section>
             <section>
                 <Heading level="primary">{content?.futureTitle?.fr}</Heading>
@@ -72,13 +72,13 @@ const Projects = () => {
                 </div>
                 {
                     futurBooks?.map((book)=>(
-                        <SecondaryProject
+                        <MinimalistProject
                             key={book.id}
                             title={book.title}
                             genre={book.genre}
                         >
                             <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(book.pitch)}}></div>
-                        </SecondaryProject>
+                        </MinimalistProject>
                     ))
                 }
             </section>
