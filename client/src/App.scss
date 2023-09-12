@@ -32,6 +32,11 @@ p {
   padding: 0.25rem 0;
 }
 
+ol,
+ul {
+  padding-left: 3rem;
+}
+
 a {
   text-decoration: none;
   color: var(--colorPrimary);
