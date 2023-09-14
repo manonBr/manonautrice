@@ -90,11 +90,9 @@ const Nav = () => {
                         <ul ref={subMenu}>
                             {
                                 tools && tools?.map((tool) => (
-                                    <li className="menu__subitem"><LinkItem to={`/ressources/${tool.name}`} onClick={isMobile ? closeMenuHamburger : undefined}>{tool.title}</LinkItem></li>
+                                    <li className="menu__subitem" key={tool._id}><LinkItem to={`/ressources/${tool.name}`} onClick={isMobile ? closeMenuHamburger : undefined}>{tool.title}</LinkItem></li>
                                 ))
                             }
-                                {/* <li className="menu__subitem"><LinkItem to="/ressources/templates-notion" onClick={isMobile ? closeMenuHamburger : undefined}>Templates Notion</LinkItem></li>
-                            <li className="menu__subitem"><LinkItem to="/ressources/creer-un-roman" onClick={isMobile ? closeMenuHamburger : undefined}>Outils : Crée ton roman</LinkItem></li> */}
                             <li className="menu__subitem"><LinkItem to="/ressources/site-internet" onClick={isMobile ? closeMenuHamburger : undefined}>Site internet : bonnes pratiques</LinkItem></li>
                         </ul>
                     </li>

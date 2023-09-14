@@ -5,7 +5,7 @@ import "./Header.scss"
 import fetchData from "../../helpers/fetchData"
 import LinkItem from "../../features/elements/LinkItem"
 
-const Header = () => {
+const Header = ({children}) => {
 
     const [images, setImages] = useState('')
     
@@ -49,6 +49,7 @@ const Header = () => {
                 <img src={images["logoDark"]?.url} alt={images["logoDark"]?.alt_tag} className="logo__img logo__img--dark" />
             </LinkItem>
             <Nav></Nav>
+            {children}
         </header>
 
     )

@@ -15,7 +15,7 @@ html {
   overflow: auto;
 }
 
-body {
+.app {
   position: relative;
   background-color: var(--colorBackground);
   color: var(--colorBase);
@@ -94,12 +94,8 @@ a {
   padding-top: 12rem;
 }
 
-
-
-
 section:not(:first-of-type) {
   margin: 8rem 0;
 }
-
 
 @import 'responsive';
