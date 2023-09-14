@@ -33,6 +33,7 @@
         height: 100%;
         border-radius: 50px;
         transition: 0.3s;
+        cursor: none;
         &::before {
             content: "";
             position: absolute;

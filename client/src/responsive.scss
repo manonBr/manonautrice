@@ -6,7 +6,8 @@
         display: block;
     }
     a,
-    button {
+    button,
+    input {
         cursor: none;
     }
     body {
@@ -42,7 +43,6 @@
 
 @media (min-width:$medium), (pointer:coarse) {
     // CURSOR
-
     #cursor {
         width: 20px;
         height: 20px;
