@@ -36,9 +36,11 @@
     .logo,
     .menu__container,
     .presentation {
-        transition: 1s;
+        transition: opacity 1s;
     }
+}
 
+@media (min-width:$medium), (pointer:coarse) {
     // CURSOR
 
     #cursor {
