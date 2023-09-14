@@ -4,20 +4,20 @@
     display: grid;
 }
 
-.columns--two {
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 1rem;
-    &.columns--reverse {
-        .columns__item:first-of-type {
-            order: 2;
-        }
-    }
-}
 
 /*
- * MIN-WIDTH : 768px
- */
+* MIN-WIDTH : 768px
+*/
 @media (min-width:$medium) {
+    .columns--two {
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 1rem;
+        &.columns--reverse {
+            .columns__item:first-of-type {
+                order: 2;
+            }
+        }
+    }
     .columns--three,
     .columns--four {
         @include columns(2);
