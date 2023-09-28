@@ -2,6 +2,7 @@ import  React, { useEffect, useState } from "react"
 import "./Footer.scss"
 import fetchData from "../../helpers/fetchData"
 import LinkItem from "../../features/elements/LinkItem"
+import Instagram from "../Instagram.components"
 
 const Footer = () => {
     const [text, setText] = useState('')
@@ -16,6 +17,7 @@ const Footer = () => {
 
     return (
         <>
+            {/* <Instagram/> */}
             <footer>
                 <p>
                     {text.tex_fr} | 

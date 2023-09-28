@@ -99,7 +99,7 @@
           }
         }
         img {
-          filter: drop-shadow(0 0 5px var(--colorSecondary));
+          filter: drop-shadow(0 0 5px var(--colorSecondary)) invert(0.8);
           transition: ease-out 350ms;
         }
       }
