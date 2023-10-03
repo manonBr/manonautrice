@@ -13,7 +13,7 @@ module.exports = {
           const db = await client.connect();
           // Verify we got a good "db" object
           if (db) {
-              _db = db.db("manonautrice");
+              _db = db.db("manonbgabrielle");
               console.log("Successfully connected to MongoDB.");
           }
           return _db;

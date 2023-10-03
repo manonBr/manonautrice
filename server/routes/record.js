@@ -15,7 +15,7 @@ const ObjectId = require("mongodb").ObjectId;
 // Getting some text content.
 recordRoutes.route("/content").get(async function (req, res) {
   try {
-    const db_connect = await dbo.getDb("manonautrice");
+    const db_connect = await dbo.getDb("manonbgabrielle");
     const result = await db_connect.collection("ma_textcontent").find({}).toArray();
     res.json(result);
   } catch (err) {
@@ -25,7 +25,7 @@ recordRoutes.route("/content").get(async function (req, res) {
 
 recordRoutes.route("/content/:name").get(async function (req, res) {
   try {
-    const db_connect = await dbo.getDb("manonautrice");
+    const db_connect = await dbo.getDb("manonbgabrielle");
     let myquery = { name: req.params.name };
     const result = await db_connect.collection("ma_textcontent").findOne(myquery);
     res.json(result);
@@ -37,7 +37,7 @@ recordRoutes.route("/content/:name").get(async function (req, res) {
 // Getting some images
 recordRoutes.route("/images").get(async function (req, res) {
   try {
-    const db_connect = await dbo.getDb("manonautrice");
+    const db_connect = await dbo.getDb("manonbgabrielle");
     const result = await db_connect.collection("ma_images").find({}).toArray();
     res.json(result);
   } catch (err) {
@@ -48,7 +48,7 @@ recordRoutes.route("/images").get(async function (req, res) {
 // Getting some personnal informations
 recordRoutes.route("/details").get(async function (req, res) {
   try {
-    const db_connect = await dbo.getDb("manonautrice");
+    const db_connect = await dbo.getDb("manonbgabrielle");
     const result = await db_connect.collection("ma_details").find({}).toArray();
     res.json(result);
   } catch (err) {
@@ -59,7 +59,7 @@ recordRoutes.route("/details").get(async function (req, res) {
 // Getting list of all books in projects
 recordRoutes.route("/books").get(async function (req, res) {
   try {
-    const db_connect = await dbo.getDb("manonautrice");
+    const db_connect = await dbo.getDb("manonbgabrielle");
     const result = await db_connect.collection("ma_books").find({}).toArray();
     res.json(result);
   } catch (err) {
@@ -70,7 +70,7 @@ recordRoutes.route("/books").get(async function (req, res) {
 // Getting informations of one particular book
 recordRoutes.route("/projets/:name").get(async function (req, res) {
   try {
-    const db_connect = await dbo.getDb("manonautrice");
+    const db_connect = await dbo.getDb("manonbgabrielle");
     let myquery = { name: req.params.name };
     const result = await db_connect.collection("ma_books").findOne(myquery);
     res.json(result);
@@ -82,7 +82,7 @@ recordRoutes.route("/projets/:name").get(async function (req, res) {
 // Getting list of all books in projects
 recordRoutes.route("/ressources").get(async function (req, res) {
   try {
-    const db_connect = await dbo.getDb("manonautrice");
+    const db_connect = await dbo.getDb("manonbgabrielle");
     const result = await db_connect.collection("ma_tools").find({}).toArray();
     res.json(result);
   } catch (err) {
@@ -93,7 +93,7 @@ recordRoutes.route("/ressources").get(async function (req, res) {
 // Getting informations of a certain type of tools
 recordRoutes.route("/ressources/:name").get(async function (req, res) {
   try {
-    const db_connect = await dbo.getDb("manonautrice");
+    const db_connect = await dbo.getDb("manonbgabrielle");
     let myquery = { name: req.params.name };
     const result = await db_connect.collection("ma_tools").findOne(myquery);
     res.json(result);
