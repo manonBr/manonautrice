@@ -28,7 +28,7 @@ const Nav = () => {
     useEffect(() => {
         fetchData
         const getTools = async () => {
-            const data = await fetchData("/ressources")
+            const data = await fetchData("/api/ressources")
             if (!data.data) {
                 navigate('/404')
             }

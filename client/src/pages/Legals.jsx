@@ -11,7 +11,7 @@ const Legals = () => {
 
     useEffect(() => {
         const getLegals = async () => {
-            const datas = await fetchData("/details")
+            const datas = await fetchData("/api/details")
             setLegals(datas.data[0])
         }
         getLegals()

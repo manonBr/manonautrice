@@ -11,7 +11,7 @@ const Header = ({children}) => {
     
     useEffect(() => {
         const getImages = async () => {
-            const datas = await fetchData("/images")
+            const datas = await fetchData("/api/images")
             const values = []
             datas.data.forEach(
                 image => {

@@ -9,7 +9,7 @@ const Footer = () => {
 
     useEffect(() => {
         const getText = async () => {
-            const datas = await fetchData("/content/footer")
+            const datas = await fetchData("/api/content/footer")
             setText(datas.data)
         }
         getText()

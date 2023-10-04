@@ -17,7 +17,7 @@ const Tools = () => {
 
     useEffect(() => {
         const getTools = async () => {
-            const data = await fetchData(url.pathname)
+            const data = await fetchData(`/api${url.pathname}`)
             if (!data.data) {
                 navigate('/404')
             }
@@ -27,7 +27,7 @@ const Tools = () => {
     }, [url])
     useEffect(() => {
         const getContent = async () => {
-            const data = await fetchData(`/content/${page}`)
+            const data = await fetchData(`/api/content/${page}`)
             if (!data.data) {
                 navigate('/404')
             }

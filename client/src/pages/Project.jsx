@@ -19,7 +19,7 @@ const Project = () => {
 
     useEffect(() => {
         const getBook = async () => {
-            const data = await fetchData(url.pathname)
+            const data = await fetchData('/api' + url.pathname)
             if (!data.data) {
                 navigate('/404')
             }
@@ -30,7 +30,7 @@ const Project = () => {
 
     useEffect(() => {
         const getText = async () => {
-            const data = await fetchData("/content/project")
+            const data = await fetchData("/api/content/project")
             if (!data.data) {
                 navigate('/404')
             }

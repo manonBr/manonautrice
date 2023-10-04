@@ -1,5 +1,6 @@
 const express = require("express")
 const cors = require("cors")
+const path = require("path")
 
 const app = express()
 require("dotenv").config({ path: "./config.env" })
@@ -16,8 +17,12 @@ app.use(require("./routes/record"))
 const dbo = require("./db/conn")
 
 // API
-app.get("/", (req, res) => res.status(200).send("Home page"))
- 
+// app.get("/", (req, res) => res.status(200).send("Home page"))
+app.use(express.static(path.join(__dirname, '../client/dist')))
+app.get('*', (req,res) => {
+  res.sendFile(path.resolve(__dirname, '../client/dist', 'index.html'))
+})
+
 app.listen(port, () => {
   // Perform a database connection when server starts
   dbo.connectToServer(function (err) {

@@ -21,7 +21,7 @@ const Home = () => {
     
     useEffect(() => {
         const getText = async () => {
-            const datas = await fetchData("/content")
+            const datas = await fetchData("/api/content")
             const values = []
             datas.data.forEach(
                 text => {
@@ -39,7 +39,7 @@ const Home = () => {
 
     useEffect(()=> {
         const getImages = async () => {
-            const datas = await fetchData("/images")
+            const datas = await fetchData("/api/images")
             const values = []
             datas.data.forEach(
                 image => {

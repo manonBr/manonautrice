@@ -12,7 +12,7 @@ const Projects = () => {
 
     useEffect(() => {
         const getBooks = async () => {
-            const datas = await fetchData('/books')
+            const datas = await fetchData('/api/books')
             const values = []
             const books = []
             datas.data.forEach(
@@ -44,7 +44,7 @@ const Projects = () => {
 
     useEffect(() => {
         const getText = async () => {
-            const data = await fetchData("/content/projects")
+            const data = await fetchData("/api/content/projects")
             if (!data.data) {
                 navigate('/404')
             }

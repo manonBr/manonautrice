@@ -13,7 +13,7 @@ const ObjectId = require("mongodb").ObjectId;
  
  
 // Getting some text content.
-recordRoutes.route("/content").get(async function (req, res) {
+recordRoutes.route("/api/content").get(async function (req, res) {
   try {
     const db_connect = await dbo.getDb("manonbgabrielle");
     const result = await db_connect.collection("ma_textcontent").find({}).toArray();
@@ -23,7 +23,7 @@ recordRoutes.route("/content").get(async function (req, res) {
   }
 });
 
-recordRoutes.route("/content/:name").get(async function (req, res) {
+recordRoutes.route("/api/content/:name").get(async function (req, res) {
   try {
     const db_connect = await dbo.getDb("manonbgabrielle");
     let myquery = { name: req.params.name };
@@ -35,7 +35,7 @@ recordRoutes.route("/content/:name").get(async function (req, res) {
 });
 
 // Getting some images
-recordRoutes.route("/images").get(async function (req, res) {
+recordRoutes.route("/api/images").get(async function (req, res) {
   try {
     const db_connect = await dbo.getDb("manonbgabrielle");
     const result = await db_connect.collection("ma_images").find({}).toArray();
@@ -46,7 +46,7 @@ recordRoutes.route("/images").get(async function (req, res) {
 });
 
 // Getting some personnal informations
-recordRoutes.route("/details").get(async function (req, res) {
+recordRoutes.route("/api/details").get(async function (req, res) {
   try {
     const db_connect = await dbo.getDb("manonbgabrielle");
     const result = await db_connect.collection("ma_details").find({}).toArray();
@@ -57,7 +57,7 @@ recordRoutes.route("/details").get(async function (req, res) {
 });
 
 // Getting list of all books in projects
-recordRoutes.route("/books").get(async function (req, res) {
+recordRoutes.route("/api/books").get(async function (req, res) {
   try {
     const db_connect = await dbo.getDb("manonbgabrielle");
     const result = await db_connect.collection("ma_books").find({}).toArray();
@@ -68,7 +68,7 @@ recordRoutes.route("/books").get(async function (req, res) {
 });
 
 // Getting informations of one particular book
-recordRoutes.route("/projets/:name").get(async function (req, res) {
+recordRoutes.route("/api/projets/:name").get(async function (req, res) {
   try {
     const db_connect = await dbo.getDb("manonbgabrielle");
     let myquery = { name: req.params.name };
@@ -80,7 +80,7 @@ recordRoutes.route("/projets/:name").get(async function (req, res) {
 });
 
 // Getting list of all books in projects
-recordRoutes.route("/ressources").get(async function (req, res) {
+recordRoutes.route("/api/ressources").get(async function (req, res) {
   try {
     const db_connect = await dbo.getDb("manonbgabrielle");
     const result = await db_connect.collection("ma_tools").find({}).toArray();
@@ -91,7 +91,7 @@ recordRoutes.route("/ressources").get(async function (req, res) {
 });
 
 // Getting informations of a certain type of tools
-recordRoutes.route("/ressources/:name").get(async function (req, res) {
+recordRoutes.route("/api/ressources/:name").get(async function (req, res) {
   try {
     const db_connect = await dbo.getDb("manonbgabrielle");
     let myquery = { name: req.params.name };
@@ -103,30 +103,27 @@ recordRoutes.route("/ressources/:name").get(async function (req, res) {
 });
 
 
-// Examples of how create routes
 
-recordRoutes.route("/record").get(async function (req, res) {
-  try {
-    const db_connect = await dbo.getDb("employees");
-    const result = await db_connect.collection("records").find({}).toArray();
-    res.json(result);
-  } catch (err) {
-    throw err;
-  }
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ___________
+// EXEMPLES
+// ___________
  
-// This section will help you get a single record by id
-recordRoutes.route("/record/:id").get(async function (req, res) {
-  try {
-    const db_connect = await dbo.getDb("employees");
-    let myquery = { _id: ObjectId(req.params.id) };
-    const result = await db_connect.collection("records").findOne(myquery);
-    res.json(result);
-  } catch (err) {
-    throw err;
-  }
-});
- 
+
+
 // This section will help you create a new record.
 recordRoutes.route("/record/add").post(async function (req, res) {
   try {
