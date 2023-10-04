@@ -112,6 +112,27 @@
       }
       &__item {
           display: inline-block;
+          &.active {
+            a {
+              color: var(--colorPrimary);
+            }
+            a:hover,
+            a:active,
+            a:focus {
+              color: var(--colorPrimary);
+            }
+            a:hover::after,
+            a:active::after,
+            a:focus::after {
+              display: none;
+            }
+            .menu__subitem a {
+              color: var(--colorBase);
+            }
+            .menu__subitem.active a {
+              color: var(--colorPrimary);
+            }
+          }
           a {
               padding: 1rem 0;
           }
@@ -120,31 +141,31 @@
               margin-left: 0.5rem;
           }
           a::after {
-              content: '';
-              width: 20px;
-              height: 20px;
-              background: var(--colorPrimary);
-              display: block;
-              position: absolute;
-              top: 50%;
-              left: 0.75rem;
-              border-radius: 50%;
-              z-index: -1;
-              transform: translateY(-40%);
-              opacity: 0;
-              transition: ease-out 0.3s;
-            }
-            a:hover,
-            a:active,
-            a:focus {
-              color: var(--colorBase);
-            }
-            a:hover::after,
-            a:active::after,
-            a:focus::after {
-              opacity: 1;
-              transition: ease-in 0.3s;
-            }
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: var(--colorPrimary);
+            display: block;
+            position: absolute;
+            // top: 50%;
+            left: 0.75rem;
+            border-radius: 50%;
+            z-index: -1;
+            transform: translateY(-40%);
+            opacity: 0;
+            transition: ease-out 0.3s;
+          }
+          a:hover,
+          a:active,
+          a:focus {
+            color: var(--colorBase);
+          }
+          a:hover::after,
+          a:active::after,
+          a:focus::after {
+            opacity: 1;
+            transition: ease-in 0.3s;
+          }
       }
       &__item--hasChildren {
           ul {
@@ -164,6 +185,14 @@
           }
           a {
               padding: 0;
+              &:hover,
+              &:active,
+              &:focus {
+                color: var(--colorPrimary);
+              }
+          }
+          a::after {
+            display: none;
           }
       }
   }

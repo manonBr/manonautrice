@@ -4,15 +4,22 @@
 // ANIMATIONS
 
 .reveal {
-    opacity: 0;
-    transition: 0s;
-    &.reveal--visible {
-      opacity: 1;
-      transform: translateX(0px);
-      transform: translateY(0px);
-      transition: 2.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+  opacity: 0;
+  transition: 0s;
+  &.reveal--visible {
+    opacity: 1;
+    transform: translateX(0px);
+    transform: translateY(0px);
+    transition: 2.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+}
+.dark-mode {
+  .socials__links {
+    a img {
+      filter: drop-shadow(0 0 5px var(--colorSecondary)) invert(0.8);
     }
   }
+}
 
 // PRESENTATION 
 
@@ -99,7 +106,6 @@
           }
         }
         img {
-          filter: drop-shadow(0 0 5px var(--colorSecondary)) invert(0.8);
           transition: ease-out 350ms;
         }
       }

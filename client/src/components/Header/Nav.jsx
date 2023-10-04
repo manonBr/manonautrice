@@ -3,13 +3,14 @@ import { useMobileSize } from "../../hooks/useScreenSize"
 import "./Nav.scss"
 import LinkItem from "../../features/elements/LinkItem"
 import fetchData from "../../helpers/fetchData"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 const Nav = () => {
     const hamburgerMenuIcon = useRef()
     const menu = useRef()
     const menuLinkWithChildren = useRef()
     const subMenu = useRef()
+    const url = useLocation()
     
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false)
@@ -84,19 +85,19 @@ const Nav = () => {
             </label>
             <div className="menu__container s-hidden loadHome" data-appear="1500" ref={menu}>
                 <ul>
-                    <li className="menu__item"><LinkItem to="/"  onClick={isMobile ? closeMenuHamburger : undefined}>Qui suis-je ?</LinkItem></li>
-                    <li className="menu__item menu__item--hasChildren" onClick={handleClickMenuItemWithChildren}>
+                    <li className={`menu__item${url.pathname == '/' ? ' active' : ''}`}><LinkItem to="/"  onClick={isMobile ? closeMenuHamburger : undefined}>Qui suis-je ?</LinkItem></li>
+                    <li className={`menu__item menu__item--hasChildren${url.pathname.includes('/ressources') ? ' active' : ''}`} onClick={handleClickMenuItemWithChildren}>
                         <LinkItem href="#" refs={menuLinkWithChildren}>Ressources</LinkItem>
                         <ul ref={subMenu}>
                             {
                                 tools && tools?.map((tool) => (
-                                    <li className="menu__subitem" key={tool._id}><LinkItem to={`/ressources/${tool.name}`} onClick={isMobile ? closeMenuHamburger : undefined}>{tool.title}</LinkItem></li>
+                                    <li className={`menu__subitem${url.pathname == `/ressources/${tool.name}` ? ' active' : ''}`} key={tool._id}><LinkItem to={`/ressources/${tool.name}`} onClick={isMobile ? closeMenuHamburger : undefined}>{tool.title}</LinkItem></li>
                                 ))
                             }
-                            <li className="menu__subitem"><LinkItem to="/ressources/site-internet" onClick={isMobile ? closeMenuHamburger : undefined}>Site internet : bonnes pratiques</LinkItem></li>
+                            <li className={`menu__subitem${url.pathname == `/ressources/site-internet` ? ' active' : ''}`}><LinkItem to="/ressources/site-internet" onClick={isMobile ? closeMenuHamburger : undefined}>Site internet : bonnes pratiques</LinkItem></li>
                         </ul>
                     </li>
-                    <li className="menu__item"><LinkItem to="/projets" onClick={isMobile ? closeMenuHamburger : undefined}>Projets en cours</LinkItem></li>
+                    <li className={`menu__item${url.pathname.includes('/projets') ? ' active' : ''}`}><LinkItem to="/projets" onClick={isMobile ? closeMenuHamburger : undefined}>Projets en cours</LinkItem></li>
                     <li className="menu__item"><LinkItem to="https://www.instagram.com/manonautrice/" target="_blank">Instagram</LinkItem></li>
                     <li className="menu__item"><LinkItem to="https://www.tiktok.com/@manon.autrice" target="_blank">TikTok</LinkItem></li>
                 </ul>
