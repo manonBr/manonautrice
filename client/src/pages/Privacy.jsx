@@ -77,7 +77,7 @@ const Privacy = () => {
                     <li>droit d'objection</li>
                 </ol>
                 <p>Si vous souhaitez que vos renseignements soient supprimés ou modifiés d’une façon ou d’une autre, veuillez nous contacter à cette adresse mail :</p>
-	            <p>Manon Bruimaud<br />manon.bruimaud@gmail.com</p>
+	            <p>Manon Bruimaud<br />manonbgabrielle@gmail.com</p>
             </div>
             <div className="container">
                 <Subheading>Politique sur les cookies</Subheading>
@@ -94,7 +94,7 @@ const Privacy = () => {
             </div>
             <div className="container">
                 <Subheading>Contact</Subheading>
-                <p>Si vous avez des questions à nous poser, n’hésitez pas à communiquer avec nous en utilisant ce qui suit :<br />manon.bruimaud@gmail.com</p>
+                <p>Si vous avez des questions à nous poser, n’hésitez pas à communiquer avec nous en utilisant ce qui suit :<br />manonbgabrielle@gmail.com</p>
             </div>
         </div>
     )

@@ -29,16 +29,16 @@ const Legals = () => {
                     <LinkItem href="/"> https://www.manonautrice.fr </LinkItem>
                     l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi:</p>
                 <p>
-                    <strong>Propriétaire du site</strong> : Manon Bruimaud - Contact : manon.bruimaud@gmail.com
+                    <strong>Propriétaire du site</strong> : Manon Bruimaud - Contact : manonbgabrielle@gmail.com
                 </p>
                 <p>
-                    <strong>Directeur de la publication</strong> : Manon Bruimaud - Contact : manon.bruimaud@gmail.com.
+                    <strong>Directeur de la publication</strong> : Manon Bruimaud - Contact : manonbgabrielle@gmail.com.
                 </p>
                 <p>
                     <strong>Hébergeur</strong> : Hostinger Hostinger International Ltd. 61 Rue Lordou Vironos, 6023 | tel. 0892977093
                 </p>
                 <p>
-                    Délégué à la protection des données : Manon Bruimaud - manon.bruimaud@gmail.com
+                    Délégué à la protection des données : Manon Bruimaud - manonbgabrielle@gmail.com
                 </p>
             </div>
             <div className="container">
@@ -80,7 +80,7 @@ const Legals = () => {
             <div className="container">
                 <Subheading>4 - CNIL et gestion des données personnelles.</Subheading>
 
-                <p>Conformément aux dispositions de la loi 78-17 du 6 janvier 1978 modifiée, l’utilisateur du site <LinkItem href="/"> https://www.manonautrice.fr </LinkItem> dispose d’un droit d’accès, de modification et de suppression des informations collectées. Pour exercer ce droit, envoyez un message à notre Délégué à la Protection des Données : Manon Bruimaud - manon.bruimaud@gmail.com.</p>
+                <p>Conformément aux dispositions de la loi 78-17 du 6 janvier 1978 modifiée, l’utilisateur du site <LinkItem href="/"> https://www.manonautrice.fr </LinkItem> dispose d’un droit d’accès, de modification et de suppression des informations collectées. Pour exercer ce droit, envoyez un message à notre Délégué à la Protection des Données : Manon Bruimaud - manonbgabrielle@gmail.com.</p>
 
                 <p>Pour plus d'informations sur la façon dont nous traitons vos données (type de données, finalité, destinataire...), lisez notre <LinkItem href="/"> https://www.manonautrice.fr </LinkItem>/politique-confidentialite.</p>
             </div>
