@@ -12,12 +12,18 @@ const Sketch = () => {
         path.current.style.strokeDasharray = pathLength + ' ' + pathLength
         path.current.style.strokeDashoffset = pathLength
 
-        window.addEventListener('scroll', () => {
+        const handleScroll = () => {
             scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight)
             drawLength = pathLength * (scrollPercentage / 2)
         
             path.current.style.strokeDashoffset = pathLength - drawLength
-        })
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
 
     }, [])
 

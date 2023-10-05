@@ -18,30 +18,24 @@ export const CursorContext = React.createContext();
  
 export default function App() {
   const cursor = useRef()
-  // const theme = useContext(ThemeContext)
   const [theme, setTheme] = useState()
-  
-  // console.log(localStorage.getItem("theme-defaultSystem"))
+
+
   useEffect(() => {
-    document.addEventListener("mousemove", function (e) {
-        cursor.current.style.left = e.clientX + "px"
-        cursor.current.style.top = e.clientY + "px"
-    })
-    // console.log(localStorage.getItem("theme-defaultSystem"))
+    const handleMouseMove = (e) => {
+      cursor.current.style.left = e.clientX + "px"
+      cursor.current.style.top = e.clientY + "px"
+    }
+    document.addEventListener("mousemove", handleMouseMove)
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove)
+    }
   }, [])
+
   useEffect(() => {
     setTheme(localStorage.getItem("theme-preference") || localStorage.getItem("theme-defaultSystem") || "light")
   }, [])
-
-  // console.log(useContext(ThemeContext))
-
-  // useEffect(() => {
-  //   if(!localStorage.getItem("theme-preference")) {
-  //     setTheme(localStorage.getItem("theme-defaultSystem") || light)
-  //   } else {
-  //     setTheme(localStorage.getItem("theme-preference") || light)
-  //   }
-  // }, [])
 
   useEffect(() => {
     window.addEventListener("theme-preference", (e) => {
