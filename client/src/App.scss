@@ -98,4 +98,8 @@ section:not(:first-of-type) {
   margin: 8rem 0;
 }
 
+#cursor {
+  display: none;
+}
+
 @import 'responsive';
