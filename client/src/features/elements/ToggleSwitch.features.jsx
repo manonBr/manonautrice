@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import "./ToggleSwitch.features.scss"
 
 const ToggleSwitch = () => {
-    const [checkbox, setCheckbox] = useState()
+    const [checkbox, setCheckbox] = useState('light')
 
     useEffect(() => {
         if(!localStorage.getItem("theme-preference")) {
@@ -28,14 +28,12 @@ const ToggleSwitch = () => {
         }
         window.dispatchEvent(new Event('theme-preference'))
     }
-    
-    // si (preference && preference === dark) || (!preference && system === dark)
-    //  => checked
+
 
     return (
         <div className="toggleSwitch">
             <label className="toggleSwitch__container">
-                <input type="checkbox" className="toggleSwitch__input" onClick={toggleTheme} checked={checkbox}/>
+                <input type="checkbox" className="toggleSwitch__input" onChange={toggleTheme} checked={checkbox}/>
                 <span className="toggleSwitch__slider"></span>
             </label>
         </div>
