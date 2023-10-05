@@ -41,7 +41,7 @@
     }
 }
 
-@media (min-width:$medium), (pointer:coarse) {
+@media (min-width: 768px) and (pointer: fine) {
     // CURSOR
     #cursor {
         display: block;
