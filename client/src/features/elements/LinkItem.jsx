@@ -20,7 +20,7 @@ const LinkItem = (props) => {
         )
     } else {
         return (
-            <Link {...rest} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{children}</Link>
+            <Link {...rest} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >{children}</Link>
         )
     }
 

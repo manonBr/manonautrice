@@ -11,7 +11,7 @@ const Listing = ({title, link, img, reverse, level, fileDownload, children}) => 
             <div className="section__container">
                 <Columns number="two" className={`listing listing--${level}`} reverse={reverse}>
                     <Column className="listing__illustration">
-                        <LinkItem to={link} reloadDocument={fileDownload ? true : false}>
+                        <LinkItem to={link} reloadDocument={fileDownload ? true : false} target="_blank">
                             <img src={img?.url} className="listing__img" alt={img?.alt_tag}></img>
                         </LinkItem>
                     </Column>
@@ -21,7 +21,7 @@ const Listing = ({title, link, img, reverse, level, fileDownload, children}) => 
                             <div className="listing__details">
                                 {children}
                             </div>
-                            <Button link={link} reloadDocument={fileDownload ? true : false} type={level==="primary" ? "secondary" : "primary"}>Je vais voir !</Button>
+                            <Button link={link} reloadDocument={fileDownload ? true : false} type={level==="primary" ? "secondary" : "primary"} target="_blank">Je vais voir !</Button>
                         </div>
                     </Column>
                 </Columns>
